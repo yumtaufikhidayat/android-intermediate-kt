@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-intermediate-kt.iml" filepath="$PROJECT_DIR$/.idea/modules/android-intermediate-kt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android_Intemediate.iml" filepath="$PROJECT_DIR$/.idea/modules/Android_Intemediate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android_Intemediate.app.unitTest.iml" />
     </modules>
   </component>
 </project>
