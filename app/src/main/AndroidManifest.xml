@@ -14,13 +14,16 @@
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
         <activity
+            android:name=".customviewfromscratch.SeatsActivity"
+            android:exported="false" />
+        <activity
             android:name=".custombuttonedittext.CustomButtonEdittextActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".customviewfromscratch.SeatsActivity"
+            android:name=".canvas.CanvasActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
