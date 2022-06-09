@@ -181,7 +181,12 @@ class CanvasClippingActivity : AppCompatActivity() {
         }
 
         val mBounds = Rect()
-        mPaintText.getTextBounds(message, 0, message.length, mBounds)
+        mPaintText.getTextBounds(
+            message,
+            0,
+            message.length,
+            mBounds
+        )
 
         val x = halfOfWidth - mBounds.centerX()
         val y = 50F
