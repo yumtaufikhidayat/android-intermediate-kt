@@ -160,12 +160,14 @@ class CanvasClippingActivity : AppCompatActivity() {
         )
         path.addOval(mouth, Path.Direction.CCW)
 
+        // Memotong object ke dalam Canvas
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             mCanvas.clipPath(path, Region.Op.DIFFERENCE)
         } else {
             mCanvas.clipOutPath(path)
         }
 
+        // Object yang tampil akan terpotong berdasarkan path yang telah diatur
         val face = RectF(left, top, right, bottom)
         mPaint.color = ResourcesCompat.getColor(resources, R.color.brown_left_hair, null)
         mCanvas.drawArc(face, 90F, 180F, false, mPaint)
