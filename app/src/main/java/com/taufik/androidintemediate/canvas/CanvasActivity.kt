@@ -93,7 +93,7 @@ class CanvasActivity : AppCompatActivity() {
                     halfOfWidth + 180F,
                     halfOfHeight + 380F
                 )
-                mCanvas.drawArc(mouth, 25F, 140F, false, mPaint)
+                mCanvas.drawArc(mouth, 25F, 130F, false, mPaint)
             }
 
             false -> {
