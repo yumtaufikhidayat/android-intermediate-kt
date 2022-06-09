@@ -150,7 +150,12 @@ class CanvasClippingActivity : AppCompatActivity() {
         path.addCircle(halfOfWidth - 100F, halfOfHeight - 10F, 150F, Path.Direction.CCW)
         path.addCircle(halfOfWidth + 100F, halfOfHeight - 10F, 150F, Path.Direction.CCW)
 
-        val mouth = RectF(halfOfWidth - 250F, halfOfHeight, halfOfWidth + 250F, halfOfHeight + 500F)
+        val mouth = RectF(
+            halfOfWidth - 250F,
+            halfOfHeight,
+            halfOfWidth + 250F,
+            halfOfHeight + 500F
+        )
         path.addOval(mouth, Path.Direction.CCW)
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
