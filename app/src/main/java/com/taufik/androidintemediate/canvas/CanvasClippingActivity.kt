@@ -144,8 +144,10 @@ class CanvasClippingActivity : AppCompatActivity() {
     }
 
     private fun showHair() {
+        // Menyimpan pengaturan canvas saat ini
         mCanvas.save()
 
+        // Membuat kerangka object yang akan dipotong
         val path = Path()
         path.addCircle(halfOfWidth - 100F, halfOfHeight - 10F, 150F, Path.Direction.CCW)
         path.addCircle(halfOfWidth + 100F, halfOfHeight - 10F, 150F, Path.Direction.CCW)
