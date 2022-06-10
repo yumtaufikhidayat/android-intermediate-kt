@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.taufik.androidintemediate">
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -13,8 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
-        <service android:name="com.taufik.androidintemediate.advancedui.widget.StackWidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <service
+            android:name="com.taufik.androidintemediate.advancedui.widget.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <receiver
             android:name="com.taufik.androidintemediate.advancedui.widget.ImageBannerWidget"
             android:exported="false">
@@ -48,10 +56,10 @@
             android:name="com.taufik.androidintemediate.advancedui.custombuttonedittext.CustomButtonEdittextActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
+            android:name=".advancedui.webview.WebViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
