@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.widget
+package com.taufik.androidintemediate.advancedui.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -8,7 +8,7 @@ import android.content.Intent
 import android.os.Build
 import android.widget.RemoteViews
 import com.taufik.androidintemediate.R
-import com.taufik.androidintemediate.widget.NumberGenerator.generateNumber
+import com.taufik.androidintemediate.advancedui.widget.NumberGenerator.generateNumber
 
 class RandomNumberWidget : AppWidgetProvider() {
     override fun onUpdate(

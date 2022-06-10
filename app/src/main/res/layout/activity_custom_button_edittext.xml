@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custombuttonedittext.CustomButtonEdittextActivity">
+    tools:context=".advancedui.custombuttonedittext.CustomButtonEdittextActivity">
 
-    <com.taufik.androidintemediate.custombuttonedittext.MyEditText
+    <com.taufik.androidintemediate.advancedui.custombuttonedittext.MyEditText
         android:id="@+id/myEditText"
         android:layout_width="@dimen/value_0dp"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <com.taufik.androidintemediate.custombuttonedittext.MyButton
+    <com.taufik.androidintemediate.advancedui.custombuttonedittext.MyButton
         android:id="@+id/myButton"
         android:layout_width="@dimen/value_0dp"
         android:layout_height="wrap_content"

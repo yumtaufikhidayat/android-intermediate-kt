@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.custombuttonedittext
+package com.taufik.androidintemediate.advancedui.custombuttonedittext
 
 import android.content.Context
 import android.graphics.Canvas

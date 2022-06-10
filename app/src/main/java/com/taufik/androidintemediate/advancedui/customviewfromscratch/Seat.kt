@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.customviewfromscratch
+package com.taufik.androidintemediate.advancedui.customviewfromscratch
 
 data class Seat(
     val id: Int,

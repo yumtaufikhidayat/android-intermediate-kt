@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.canvas
+package com.taufik.androidintemediate.advancedui.canvas
 
 import android.graphics.*
 import android.os.Build

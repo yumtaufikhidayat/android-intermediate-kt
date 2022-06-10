@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.widget
+package com.taufik.androidintemediate.advancedui.widget
 
 import android.content.Intent
 import android.widget.RemoteViewsService

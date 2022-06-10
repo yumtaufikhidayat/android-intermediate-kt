@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.customviewfromscratch
+package com.taufik.androidintemediate.advancedui.customviewfromscratch
 
 import android.os.Bundle
 import android.view.Window

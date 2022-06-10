@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.customviewfromscratch
+package com.taufik.androidintemediate.advancedui.customviewfromscratch
 
 import android.annotation.SuppressLint
 import android.content.Context

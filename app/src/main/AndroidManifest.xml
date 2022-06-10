@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
-        <service android:name=".widget.StackWidgetService"
+        <service android:name="com.taufik.androidintemediate.advancedui.widget.StackWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
         <receiver
-            android:name=".widget.ImageBannerWidget"
+            android:name="com.taufik.androidintemediate.advancedui.widget.ImageBannerWidget"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -27,7 +27,7 @@
                 android:resource="@xml/image_banner_widget_info" />
         </receiver>
         <receiver
-            android:name=".widget.RandomNumberWidget"
+            android:name="com.taufik.androidintemediate.advancedui.widget.RandomNumberWidget"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -39,19 +39,19 @@
         </receiver>
 
         <activity
-            android:name=".canvas.CanvasActivity"
+            android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasActivity"
             android:exported="false" />
         <activity
-            android:name=".customviewfromscratch.SeatsActivity"
+            android:name="com.taufik.androidintemediate.advancedui.customviewfromscratch.SeatsActivity"
             android:exported="false" />
         <activity
-            android:name=".custombuttonedittext.CustomButtonEdittextActivity"
+            android:name="com.taufik.androidintemediate.advancedui.custombuttonedittext.CustomButtonEdittextActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".canvas.CanvasClippingActivity"
+            android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

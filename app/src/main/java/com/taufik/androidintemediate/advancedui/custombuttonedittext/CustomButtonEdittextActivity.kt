@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.custombuttonedittext
+package com.taufik.androidintemediate.advancedui.custombuttonedittext
 
 import android.os.Bundle
 import android.text.Editable

@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.widget
+package com.taufik.androidintemediate.advancedui.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -43,8 +43,8 @@ class ImageBannerWidget : AppWidgetProvider() {
     }
 
     companion object {
-        private const val TOAST_ACTION = "com.taufik.androidintemediate.widget.TOAST_ACTION"
-        const val EXTRA_ITEM = "com.taufik.androidintemediate.widget.EXTRA_ITEM"
+        private const val TOAST_ACTION = "com.taufik.androidintemediate.advancedui.widget.TOAST_ACTION"
+        const val EXTRA_ITEM = "com.taufik.androidintemediate.advancedui.widget.EXTRA_ITEM"
 
         private fun updateAppWidget(
             context: Context,
