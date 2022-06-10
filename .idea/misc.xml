@@ -6,6 +6,8 @@
         <entry key="../../../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_canvas.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_seats.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/image_banner_widget.xml" value="0.17222222222222222" />
+        <entry key="app/src/main/res/layout/item_widget.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/random_number_widget.xml" value="0.1" />
       </map>
     </option>
