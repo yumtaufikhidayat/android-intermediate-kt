@@ -10,9 +10,6 @@ import android.widget.RemoteViews
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.widget.NumberGenerator.generateNumber
 
-/**
- * Implementation of App Widget functionality.
- */
 class RandomNumberWidget : AppWidgetProvider() {
     override fun onUpdate(
         context: Context,
