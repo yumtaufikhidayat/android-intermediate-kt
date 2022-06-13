@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.taufik.androidintemediate">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,13 @@
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".advancedui.webview.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".animation.propertyanimation.view.main.MainAnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".animation.propertyanimation.view.login.LoginActivity"
             android:exported="false" />
 
         <service
@@ -59,7 +65,7 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".advancedui.webview.WebViewActivity"
+            android:name=".animation.propertyanimation.view.welcome.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
