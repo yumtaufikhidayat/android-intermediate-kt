@@ -1,9 +1,12 @@
 package com.taufik.androidintemediate.animation.propertyanimation.view.main
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +35,7 @@ class MainAnimationActivity : AppCompatActivity() {
         setupView()
         setupViewModel()
         setupAction()
+        playAnimation()
     }
 
     private fun setupView() {
@@ -66,6 +70,38 @@ class MainAnimationActivity : AppCompatActivity() {
     private fun setupAction() = with(binding) {
         btnLogout.setOnClickListener {
             mainViewModel.logout()
+        }
+    }
+
+    private fun playAnimation() = with(binding) {
+        /*
+            objek gambar
+            bergerak secara horizontal
+            dengan durasi 6 detik
+            bergerak sejauh 60f (-30f s.d. 30f)
+            kembali ke titik semula (repeatMode = reverse)
+            animasi terus berjalan (repeatCount = infinity)
+        */
+        ObjectAnimator.ofFloat(imageView, View.TRANSLATION_X, -30f, 30f).apply {
+            duration = 6000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+
+            val name = ObjectAnimator.ofFloat(tvName, View.ALPHA, 1f).setDuration(500)
+            val message = ObjectAnimator.ofFloat(tvMessage, View.ALPHA, 1f).setDuration(500)
+            val logout = ObjectAnimator.ofFloat(btnLogout, View.ALPHA, 1f).setDuration(500)
+            val copyright = ObjectAnimator.ofFloat(tvCopyright, View.ALPHA, 1f).setDuration(500)
+
+            // textView dan button lainnya bergerak secara sekuensial
+            AnimatorSet().apply {
+                playSequentially(
+                    name,
+                    message,
+                    logout,
+                    copyright
+                )
+                start()
+            }
         }
     }
 }
