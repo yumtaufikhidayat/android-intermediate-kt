@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/value_16dp"
         android:layout_marginHorizontal="@dimen/value_32dp"
+        android:alpha="0"
         android:text="@string/title_signup_page"
         android:textColor="@color/black"
         android:textSize="@dimen/value_20sp"
@@ -38,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/value_32dp"
+        android:alpha="0"
         android:layout_marginTop="@dimen/value_8dp"
         android:text="@string/name"
         android:textColor="@color/black"
@@ -50,6 +52,7 @@
         android:layout_width="@dimen/value_0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/value_32dp"
+        android:alpha="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvName"
@@ -60,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:alpha="0"
             android:inputType="text"
             app:passwordToggleEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -68,6 +72,7 @@
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:alpha="0"
         android:layout_marginStart="@dimen/value_32dp"
         android:layout_marginTop="@dimen/value_16dp"
         android:text="@string/email"
@@ -81,6 +86,7 @@
         android:layout_width="@dimen/value_0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/value_32dp"
+        android:alpha="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail"
@@ -91,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:alpha="0"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,6 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/value_8dp"
         android:layout_marginStart="@dimen/value_32dp"
+        android:alpha="0"
         android:text="@string/password"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,6 +119,7 @@
         android:layout_width="@dimen/value_0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/value_32dp"
+        android:alpha="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword"
@@ -122,6 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:alpha="0"
             android:inputType="textPassword"
             app:passwordToggleEnabled="true" />
         
@@ -134,6 +144,7 @@
         android:layout_marginTop="@dimen/value_32dp"
         android:layout_marginHorizontal="@dimen/value_32dp"
         android:backgroundTint="@color/navi"
+        android:alpha="0"
         android:text="@string/signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,6 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/value_8dp"
         android:layout_marginHorizontal="@dimen/value_32dp"
+        android:alpha="0"
         android:text="@string/copyright"
         android:textSize="@dimen/value_14sp"
         app:layout_constraintBottom_toBottomOf="parent"

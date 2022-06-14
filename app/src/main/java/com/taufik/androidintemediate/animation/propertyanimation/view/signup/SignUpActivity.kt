@@ -1,8 +1,11 @@
 package com.taufik.androidintemediate.animation.propertyanimation.view.signup
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
@@ -31,6 +34,7 @@ class SignUpActivity : AppCompatActivity() {
         setupView()
         setupViewModel()
         setupAction()
+        playAnimation()
     }
 
     private fun setupView() {
@@ -46,7 +50,7 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun setupViewModel() = with(binding) {
+    private fun setupViewModel() {
         signUpViewModel = ViewModelProvider(
             this@SignUpActivity,
             ViewModelFactory(UserPreference.getInstance(dataStore))
@@ -73,6 +77,53 @@ class SignUpActivity : AppCompatActivity() {
                     create()
                     show()
                 }
+            }
+        }
+    }
+
+    private fun playAnimation() = with(binding) {
+        /*
+            objek gambar
+            bergerak secara horizontal
+            dengan durasi 6 detik
+            bergerak sejauh 60f (-30f s.d. 30f)
+            kembali ke titik semula (repeatMode = reverse)
+            animasi terus berjalan (repeatCount = infinity)
+        */
+        ObjectAnimator.ofFloat(imageView, View.TRANSLATION_X, - 30f, 30f).apply {
+            duration = 6000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+
+            // Menambahkan animasi untuk masing-masing view
+            val title = ObjectAnimator.ofFloat(tvTitle, View.ALPHA, 1f).setDuration(500)
+
+            val nameTitle = ObjectAnimator.ofFloat(tvName, View.ALPHA, 1f).setDuration(500)
+            val nameInput = ObjectAnimator.ofFloat(tvNameInput, View.ALPHA, 1f).setDuration(500)
+            val nameEdit = ObjectAnimator.ofFloat(etName, View.ALPHA, 1f).setDuration(500)
+
+            val emailTitle = ObjectAnimator.ofFloat(tvEmail, View.ALPHA, 1f).setDuration(500)
+            val emailInput = ObjectAnimator.ofFloat(tvEmailInput, View.ALPHA, 1f).setDuration(500)
+            val emailEdit = ObjectAnimator.ofFloat(etEmail, View.ALPHA, 1f).setDuration(500)
+
+            val passwordTitle = ObjectAnimator.ofFloat(tvPassword, View.ALPHA, 1f).setDuration(500)
+            val passwordInput = ObjectAnimator.ofFloat(tvPasswordInput, View.ALPHA, 1f).setDuration(500)
+            val passwordEdit = ObjectAnimator.ofFloat(etPassword, View.ALPHA, 1f).setDuration(500)
+
+            val signup = ObjectAnimator.ofFloat(btnSignup, View.ALPHA, 1f).setDuration(500)
+            val copyright = ObjectAnimator.ofFloat(tvCopyright, View.ALPHA, 1f).setDuration(500)
+
+            // textView dan button lainnya bergerak secara sekuensial
+            AnimatorSet().apply {
+                playSequentially(
+                    title,
+                    nameTitle, nameInput, nameEdit,
+                    emailTitle, emailInput, emailEdit,
+                    passwordTitle, passwordInput, passwordEdit,
+                    signup,
+                    copyright
+                )
+                start()
             }
         }
     }

@@ -19,6 +19,9 @@
             android:name=".advancedui.webview.WebViewActivity"
             android:exported="false" />
         <activity
+            android:name=".animation.propertyanimation.view.signup.SignUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".animation.propertyanimation.view.main.MainAnimationActivity"
             android:exported="false" />
         <activity
