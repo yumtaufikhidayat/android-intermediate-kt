@@ -58,24 +58,26 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun setupAction() = with(binding) {
-        val name = etName.text.toString()
-        val email = etEmail.text.toString()
-        val password = etPassword.text.toString()
+        btnSignup.setOnClickListener {
+            val name = etName.text.toString()
+            val email = etEmail.text.toString()
+            val password = etPassword.text.toString()
 
-        when {
-            name.isEmpty() -> tvNameInput.error = "Masukkan nama"
-            email.isEmpty() -> tvEmailInput.error = "Masukkan email"
-            password.isEmpty() -> tvPasswordInput.error = "Masukkan password"
-            else -> {
-                signUpViewModel.saveUser(UserModel(name, email, password, false))
-                AlertDialog.Builder(this@SignUpActivity).apply {
-                    setTitle("Yeah!")
-                    setMessage("Akunnya sudah jadi nih. Yuk, login dan belajar coding.")
-                    setPositiveButton("Lanjut") { _, _ ->
-                        finish()
+            when {
+                name.isEmpty() -> tvNameInput.error = "Masukkan nama"
+                email.isEmpty() -> tvEmailInput.error = "Masukkan email"
+                password.isEmpty() -> tvPasswordInput.error = "Masukkan password"
+                else -> {
+                    signUpViewModel.saveUser(UserModel(name, email, password, false))
+                    AlertDialog.Builder(this@SignUpActivity).apply {
+                        setTitle("Yeah!")
+                        setMessage("Akunnya sudah jadi nih. Yuk, login dan belajar coding.")
+                        setPositiveButton("Lanjut") { _, _ ->
+                            finish()
+                        }
+                        create()
+                        show()
                     }
-                    create()
-                    show()
                 }
             }
         }
