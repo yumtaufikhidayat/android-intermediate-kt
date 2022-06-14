@@ -1,9 +1,12 @@
 package com.taufik.androidintemediate.animation.propertyanimation.view.login
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
@@ -34,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
         setupView()
         setupViewModel()
         setupAction()
+        playAnimation()
     }
 
     private fun setupView() {
@@ -85,6 +89,46 @@ class LoginActivity : AppCompatActivity() {
                         show()
                     }
                 }
+            }
+        }
+    }
+
+    private fun playAnimation() = with(binding) {
+        /*
+            objek gambar
+            bergerak secara horizontal
+            dengan durasi 6 detik
+            bergerak sejauh 60f (-30f s.d. 30f)
+            kembali ke titik semula (repeatMode = reverse)
+            animasi terus berjalan (repeatCount = infinity)
+        */
+        ObjectAnimator.ofFloat(imageView, View.TRANSLATION_X, - 30f, 30f).apply {
+            duration = 6000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+
+            // Menambahkan animasi untuk masing-masing view
+            val title = ObjectAnimator.ofFloat(tvTitle, View.ALPHA, 1f).setDuration(500)
+            val message = ObjectAnimator.ofFloat(tvMessage, View.ALPHA, 1f).setDuration(500)
+
+            val emailTitle = ObjectAnimator.ofFloat(tvEmail, View.ALPHA, 1f).setDuration(500)
+            val emailInput = ObjectAnimator.ofFloat(tvEmailInput, View.ALPHA, 1f).setDuration(500)
+
+            val passwordTitle = ObjectAnimator.ofFloat(tvPassword, View.ALPHA, 1f).setDuration(500)
+            val passwordInput = ObjectAnimator.ofFloat(tvPasswordInput, View.ALPHA, 1f).setDuration(500)
+
+            val signup = ObjectAnimator.ofFloat(btnLogin, View.ALPHA, 1f).setDuration(500)
+            val copyright = ObjectAnimator.ofFloat(tvCopyright, View.ALPHA, 1f).setDuration(500)
+
+            AnimatorSet().apply {
+                playSequentially(
+                    title, message,
+                    emailTitle, emailInput,
+                    passwordTitle, passwordInput,
+                    signup,
+                    copyright
+                )
+                start()
             }
         }
     }
