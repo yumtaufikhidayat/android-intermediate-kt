@@ -100,15 +100,12 @@ class SignUpActivity : AppCompatActivity() {
 
             val nameTitle = ObjectAnimator.ofFloat(tvName, View.ALPHA, 1f).setDuration(500)
             val nameInput = ObjectAnimator.ofFloat(tvNameInput, View.ALPHA, 1f).setDuration(500)
-            val nameEdit = ObjectAnimator.ofFloat(etName, View.ALPHA, 1f).setDuration(500)
 
             val emailTitle = ObjectAnimator.ofFloat(tvEmail, View.ALPHA, 1f).setDuration(500)
             val emailInput = ObjectAnimator.ofFloat(tvEmailInput, View.ALPHA, 1f).setDuration(500)
-            val emailEdit = ObjectAnimator.ofFloat(etEmail, View.ALPHA, 1f).setDuration(500)
 
             val passwordTitle = ObjectAnimator.ofFloat(tvPassword, View.ALPHA, 1f).setDuration(500)
             val passwordInput = ObjectAnimator.ofFloat(tvPasswordInput, View.ALPHA, 1f).setDuration(500)
-            val passwordEdit = ObjectAnimator.ofFloat(etPassword, View.ALPHA, 1f).setDuration(500)
 
             val signup = ObjectAnimator.ofFloat(btnSignup, View.ALPHA, 1f).setDuration(500)
             val copyright = ObjectAnimator.ofFloat(tvCopyright, View.ALPHA, 1f).setDuration(500)
@@ -117,9 +114,9 @@ class SignUpActivity : AppCompatActivity() {
             AnimatorSet().apply {
                 playSequentially(
                     title,
-                    nameTitle, nameInput, nameEdit,
-                    emailTitle, emailInput, emailEdit,
-                    passwordTitle, passwordInput, passwordEdit,
+                    nameTitle, nameInput,
+                    emailTitle, emailInput,
+                    passwordTitle, passwordInput,
                     signup,
                     copyright
                 )

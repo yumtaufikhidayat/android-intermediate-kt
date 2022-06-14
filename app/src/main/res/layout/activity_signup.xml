@@ -63,7 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:alpha="0"
             android:inputType="text"
             app:passwordToggleEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +96,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:alpha="0"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,7 +129,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:alpha="0"
             android:inputType="textPassword"
             app:passwordToggleEnabled="true" />
         
