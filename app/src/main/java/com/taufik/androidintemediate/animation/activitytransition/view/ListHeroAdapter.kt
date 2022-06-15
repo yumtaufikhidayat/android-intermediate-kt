@@ -1,8 +1,10 @@
 package com.taufik.androidintemediate.animation.activitytransition.view
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -33,9 +35,10 @@ class ListHeroAdapter: ListAdapter<Hero, ListHeroAdapter.ListHeroViewHolder>(Lis
             tvDesc.text = item.description
 
             itemView.setOnClickListener {
-                it.context.startActivity(Intent(itemView.context, DetailHeroActivity::class.java).apply {
+                val intent = Intent(itemView.context, DetailHeroActivity::class.java).apply {
                     putExtra(EXTRA_HERO, item)
-                })
+                }
+                it.context.startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(itemView.context as Activity).toBundle())
             }
         }
     }
