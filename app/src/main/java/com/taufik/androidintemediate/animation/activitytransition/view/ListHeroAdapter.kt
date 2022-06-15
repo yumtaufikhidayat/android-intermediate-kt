@@ -1,11 +1,14 @@
 package com.taufik.androidintemediate.animation.activitytransition.view
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.core.util.Pair
 import com.bumptech.glide.Glide
 import com.taufik.androidintemediate.animation.activitytransition.model.Hero
 import com.taufik.androidintemediate.animation.activitytransition.view.DetailHeroActivity.Companion.EXTRA_HERO
@@ -33,9 +36,17 @@ class ListHeroAdapter: ListAdapter<Hero, ListHeroAdapter.ListHeroViewHolder>(Lis
             tvDesc.text = item.description
 
             itemView.setOnClickListener {
-                it.context.startActivity(Intent(itemView.context, DetailHeroActivity::class.java).apply {
+                val intent = Intent(it.context, DetailHeroActivity::class.java).apply {
                     putExtra(EXTRA_HERO, item)
-                })
+                }
+
+                val optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    itemView.context as Activity,
+                    Pair(imgProfile, "profile"),
+                    Pair(tvName, "name"),
+                    Pair(tvDesc, "description"),
+                )
+                itemView.context.startActivity(intent, optionsCompat.toBundle())
             }
         }
     }
