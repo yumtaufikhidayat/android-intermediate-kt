@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
         <activity
+            android:name=".animation.motionlayout.MotionMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".animation.activitytransition.view.MainHeroActivity"
             android:exported="false" />
         <activity
@@ -77,7 +80,7 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".animation.motionlayout.MotionMainActivity"
+            android:name=".localizationaccessbility.localization.LocalizationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

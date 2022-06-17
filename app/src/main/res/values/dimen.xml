@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="value_min_8dp">-8dp</dimen>
     <dimen name="value_0dp">0dp</dimen>
     <dimen name="value_2dp">2dp</dimen>
     <dimen name="value_4dp">4dp</dimen>
@@ -18,6 +19,7 @@
     <dimen name="value_300dp">300dp</dimen>
 
     // Text size
+    <dimen name="value_12sp">12sp</dimen>
     <dimen name="value_14sp">14sp</dimen>
     <dimen name="value_16sp">16sp</dimen>
     <dimen name="value_20sp">20sp</dimen>

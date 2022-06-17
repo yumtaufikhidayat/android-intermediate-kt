@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="product_description">Sepatu damel playon edisi namung kedik. Yen ngagem sepatu niki saget ningkataken pemahaman panjenengan nalika sinau coding.\n\nBarang mesti wonten. Sepatu punika wonten ing katah ukuran lan warna. Monggo dipun pesen!</string>
+    <string name="product_price">Rp 200.000,00</string>
+    <string name="product_name">Sepatu Damel Playon</string>
+    <string name="product_store">Warung Dicoding</string>
+    <string name="product_date">Dipasang 5 Agustus 2021</string>
+    <string name="product_color">Soklat</string>
+    <string name="product_rating">4.5 (1.249)</string>
+    <string name="product_size">42</string>
+    <string name="buy">Tumbasen Sak Niki!</string>
+</resources>
