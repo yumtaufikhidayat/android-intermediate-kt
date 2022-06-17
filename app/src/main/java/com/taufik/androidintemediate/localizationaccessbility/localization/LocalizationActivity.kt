@@ -15,6 +15,7 @@ class LocalizationActivity : AppCompatActivity() {
         binding = ActivityLocalizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
         setAction()
     }
 
