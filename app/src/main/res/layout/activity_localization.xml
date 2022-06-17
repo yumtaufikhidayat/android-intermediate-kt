@@ -229,4 +229,16 @@
         app:layout_constraintEnd_toStartOf="@+id/imgSize"
         app:layout_constraintHorizontal_bias="0.5"/>
 
+    <ImageView
+        android:id="@+id/imgSetting"
+        android:layout_width="@dimen/value_50dp"
+        android:layout_height="@dimen/value_50dp"
+        android:layout_marginTop="@dimen/value_8dp"
+        android:layout_marginEnd="@dimen/value_8dp"
+        android:padding="@dimen/value_8dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_outline_settings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
