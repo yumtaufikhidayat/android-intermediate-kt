@@ -9,10 +9,13 @@
     <dimen name="value_12dp">12dp</dimen>
     <dimen name="value_16dp">16dp</dimen>
     <dimen name="value_24dp">24dp</dimen>
+    <dimen name="value_30dp">30dp</dimen>
     <dimen name="value_32dp">32dp</dimen>
+    <dimen name="value_50dp">50dp</dimen>
     <dimen name="value_64dp">64dp</dimen>
     <dimen name="value_100dp">100dp</dimen>
     <dimen name="value_250dp">250dp</dimen>
+    <dimen name="value_300dp">300dp</dimen>
 
     // Text size
     <dimen name="value_14sp">14sp</dimen>
