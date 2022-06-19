@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
         <activity
+            android:name=".AdaptiveLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".animation.motionlayout.MotionMainActivity"
             android:exported="false" />
         <activity
