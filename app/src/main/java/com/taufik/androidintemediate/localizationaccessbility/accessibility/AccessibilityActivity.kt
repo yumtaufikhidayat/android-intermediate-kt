@@ -8,18 +8,18 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.taufik.androidintemediate.R
-import com.taufik.androidintemediate.databinding.ActivityAccessbilityBinding
+import com.taufik.androidintemediate.databinding.ActivityAccessibilityBinding
 import com.taufik.androidintemediate.localizationaccessbility.accessibility.Helper.withCurrencyFormat
 import com.taufik.androidintemediate.localizationaccessbility.accessibility.Helper.withDateFormat
 import com.taufik.androidintemediate.localizationaccessbility.accessibility.Helper.withNumberingFormat
 
 class AccessibilityActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAccessbilityBinding
+    private lateinit var binding: ActivityAccessibilityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAccessbilityBinding.inflate(layoutInflater)
+        binding = ActivityAccessibilityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupView()
