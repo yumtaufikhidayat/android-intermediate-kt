@@ -15,7 +15,7 @@ class RemoteDataSource(private val context: Context) {
             date = context.getString(R.string.date),
             rating = context.getString(R.string.rating),
             price = context.getString(R.string.price),
-            countRating = context.getString(R.string.countRating)
+            countRating = context.getString(R.string.count_rating)
         )
     }
 }

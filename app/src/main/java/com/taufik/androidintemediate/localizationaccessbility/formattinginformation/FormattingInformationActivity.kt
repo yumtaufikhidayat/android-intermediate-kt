@@ -56,8 +56,8 @@ class FormattingInformationActivity : AppCompatActivity() {
             tvSize.text = size
             tvDesc.text = desc
             tvPrice.text = price.withCurrencyFormat()
-            tvDate.text = getString(R.string.dateFormat, date.withDateFormat())
-            tvRating.text = getString(R.string.ratingFormat, rating.withNumberingFormat(), countRating.withNumberingFormat())
+            tvDate.text = getString(R.string.date_format, date.withDateFormat())
+            tvRating.text = getString(R.string.rating_format, rating.withNumberingFormat(), countRating.withNumberingFormat())
         }
     }
 }
