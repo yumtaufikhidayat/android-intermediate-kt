@@ -243,6 +243,7 @@
         android:padding="@dimen/value_8dp"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/ic_outline_settings"
+        app:tint="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
