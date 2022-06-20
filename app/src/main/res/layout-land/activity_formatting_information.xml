@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".localizationaccessbility.formattinginformation.FormattingInformationActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/value_64dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgPreview"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="@dimen/value_0dp"
+        android:layout_margin="@dimen/value_16dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnBuy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
+        app:srcCompat="@drawable/shoes"/>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="@dimen/value_0dp"
+        android:layout_marginTop="@dimen/value_min_8dp"
+        android:layout_marginBottom="@dimen/value_min_8dp"
+        android:layout_marginStart="@dimen/value_min_8dp"
+        android:layout_marginEnd="@dimen/value_min_8dp"
+        android:background="@drawable/rounded_background"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        app:layout_constraintBottom_toBottomOf="@id/tvPrice"
+        app:layout_constraintStart_toStartOf="@id/tvPrice"
+        app:layout_constraintEnd_toEndOf="@id/tvPrice"/>
+
+    <ImageView
+        android:id="@+id/imgColors"
+        android:layout_width="@dimen/value_30dp"
+        android:layout_height="@dimen/value_30dp"
+        android:layout_marginTop="@dimen/value_8dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        app:layout_constraintStart_toEndOf="@+id/space1"
+        app:layout_constraintEnd_toStartOf="@+id/tvColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:srcCompat="@drawable/ic_baseline_circle_24" />
+
+    <ImageView
+        android:id="@+id/imgRating"
+        android:layout_width="@dimen/value_30dp"
+        android:layout_height="@dimen/value_30dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toTopOf="@+id/imgColors"
+        app:layout_constraintBottom_toBottomOf="@id/imgColors"
+        app:layout_constraintStart_toEndOf="@+id/space2"
+        app:layout_constraintEnd_toStartOf="@+id/tvRating"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+    <ImageView
+        android:id="@+id/imgSize"
+        android:layout_width="@dimen/value_30dp"
+        android:layout_height="@dimen/value_30dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toTopOf="@+id/imgRating"
+        app:layout_constraintBottom_toBottomOf="@id/imgRating"
+        app:layout_constraintStart_toEndOf="@+id/space4"
+        app:layout_constraintEnd_toStartOf="@+id/tvSize"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:srcCompat="@drawable/ic_baseline_shoe" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="@dimen/value_0dp"
+        android:layout_marginTop="@dimen/value_min_8dp"
+        android:layout_marginBottom="@dimen/value_min_8dp"
+        android:layout_marginStart="@dimen/value_min_8dp"
+        android:layout_marginEnd="@dimen/value_min_8dp"
+        android:background="@drawable/rounded_background"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        app:layout_constraintStart_toStartOf="@+id/tvPrice"
+        app:layout_constraintEnd_toEndOf="@+id/tvPrice"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/value_24dp"
+        android:layout_marginEnd="@dimen/value_24dp"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/value_16sp"
+        android:textStyle="bold"
+        android:text="@string/product_price"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPreview"
+        app:layout_constraintEnd_toEndOf="@id/imgPreview" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_16dp"
+        android:layout_marginStart="@dimen/value_16dp"
+        android:fontFamily="sans-serif-thin"
+        android:maxLines="2"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/value_34sp"
+        android:textStyle="bold"
+        android:text="@string/product_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical"/>
+
+    <TextView
+        android:id="@+id/tvStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/product_store"
+        android:textSize="@dimen/value_16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_4dp"
+        android:layout_marginEnd="@dimen/value_16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/product_date"
+        android:textSize="@dimen/value_12sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/tvStore"
+        app:layout_constraintStart_toStartOf="@+id/tvStore"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/product_color"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/imgColors"
+        app:layout_constraintBottom_toBottomOf="@+id/imgColors"
+        app:layout_constraintStart_toEndOf="@+id/imgColors"
+        app:layout_constraintEnd_toStartOf="@+id/space2"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/product_rating"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/imgRating"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRating"
+        app:layout_constraintStart_toEndOf="@+id/imgRating"
+        app:layout_constraintEnd_toStartOf="@+id/space4"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <TextView
+        android:id="@+id/tvSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/product_size"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/imgSize"
+        app:layout_constraintBottom_toBottomOf="@+id/imgSize"
+        app:layout_constraintStart_toEndOf="@+id/imgSize"
+        app:layout_constraintEnd_toStartOf="@+id/space3"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="@dimen/value_0dp"
+        android:layout_marginVertical="@dimen/value_8dp"
+        android:layout_marginHorizontal="@dimen/value_16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/product_description"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/imgColors"
+        app:layout_constraintBottom_toTopOf="@+id/btnBuy"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnBuy"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/value_8dp"
+        android:layout_marginHorizontal="@dimen/value_16dp"
+        android:backgroundTint="@color/bright_pink"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/buy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/imgColors"
+        app:layout_constraintBottom_toBottomOf="@+id/imgColors"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical"
+        app:layout_constraintEnd_toStartOf="@+id/imgColors" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tvColor"
+        app:layout_constraintBottom_toBottomOf="@+id/tvColor"
+        app:layout_constraintStart_toEndOf="@+id/tvColor"
+        app:layout_constraintEnd_toStartOf="@+id/imgRating"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <Space
+        android:id="@+id/space3"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tvSize"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSize"
+        app:layout_constraintStart_toEndOf="@+id/tvSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <Space
+        android:id="@+id/space4"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/tvRating"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRating"
+        app:layout_constraintStart_toEndOf="@+id/tvRating"
+        app:layout_constraintEnd_toStartOf="@+id/imgSize"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <ImageView
+        android:id="@+id/imgSetting"
+        android:layout_width="@dimen/value_50dp"
+        android:layout_height="@dimen/value_50dp"
+        android:layout_marginTop="@dimen/value_8dp"
+        android:layout_marginEnd="@dimen/value_8dp"
+        android:padding="@dimen/value_8dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_outline_settings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

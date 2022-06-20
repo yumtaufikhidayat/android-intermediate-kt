@@ -9,4 +9,7 @@
     <string name="product_rating">4.5 (1.249)</string>
     <string name="product_size">42</string>
     <string name="buy">¡Compra Ahora!</string>
+
+    <string name="dateFormat">Subido el %1$s</string>
+    <string name="ratingFormat">%1$s (%2$s)</string>
 </resources>
