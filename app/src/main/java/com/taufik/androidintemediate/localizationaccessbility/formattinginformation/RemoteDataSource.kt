@@ -12,10 +12,10 @@ class RemoteDataSource(private val context: Context) {
             color = context.getString(R.string.product_color),
             desc = context.getString(R.string.product_description),
             image = R.drawable.shoes,
-            date = context.getString(R.string.product_date),
-            rating = context.getString(R.string.product_rating),
-            price = context.getString(R.string.product_price),
-            countRating = context.getString(R.string.product_count_rating)
+            date = context.getString(R.string.date),
+            rating = context.getString(R.string.rating),
+            price = context.getString(R.string.price),
+            countRating = context.getString(R.string.countRating)
         )
     }
 }
