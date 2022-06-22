@@ -108,4 +108,7 @@
     <string name="start_service" translatable="false">Start Service</string>
     <string name="start_bound_service" translatable="false">Start Bound Service</string>
     <string name="stop_bound_service" translatable="false">Stop bound Service</string>
+
+    <string name="btn_text_play" translatable="false">Play</string>
+    <string name="text_sound_pool" translatable="false">Test Soundpool</string>
 </resources>

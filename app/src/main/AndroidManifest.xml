@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.taufik.androidintemediate" >
+    package="com.taufik.androidintemediate">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,15 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidIntemediate"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".service.serviceboundservice.ServiceActivity"
+            android:exported="false" />
+
         <service
             android:name=".service.serviceboundservice.MyBoundService"
             android:enabled="true"
             android:exported="false" />
-
         <service
             android:name=".service.serviceboundservice.MyService"
-            android:enabled="true"/>
+            android:enabled="true" />
 
         <activity
             android:name=".localizationaccessbility.accessibility.AccessibilityActivity"
@@ -67,7 +70,7 @@
 
         <receiver
             android:name="com.taufik.androidintemediate.advancedui.widget.ImageBannerWidget"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -78,7 +81,7 @@
         </receiver>
         <receiver
             android:name="com.taufik.androidintemediate.advancedui.widget.RandomNumberWidget"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -101,8 +104,8 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".service.serviceboundservice.ServiceActivity"
-            android:exported="true" >
+            android:name=".media.soundpool.SoundPoolActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
