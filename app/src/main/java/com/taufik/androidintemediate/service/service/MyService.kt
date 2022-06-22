@@ -34,6 +34,6 @@ class MyService : Service() {
 
     companion object {
         internal val TAG = MyService::class.java.simpleName
-        internal val delayTime = 3000L
+        internal const val delayTime = 3000L
     }
 }
