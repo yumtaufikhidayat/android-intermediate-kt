@@ -104,4 +104,8 @@
     <string name="sizeDescription">The size is  %1$s</string>
     <string name="colorDescription">The color is %1$s</string>
     <string name="ratingDescription">Got a rating of %1$s from %2$s</string>
+
+    <string name="start_service" translatable="false">Start Service</string>
+    <string name="start_bound_service" translatable="false">Start Bound Service</string>
+    <string name="stop_bound_service" translatable="false">Stop bound Service</string>
 </resources>
