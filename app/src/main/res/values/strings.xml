@@ -111,4 +111,6 @@
 
     <string name="btn_text_play" translatable="false">Play</string>
     <string name="text_sound_pool" translatable="false">Test Soundpool</string>
+    <string name="text_mediaplayer" translatable="false">Test Mediaplayer</string>
+    <string name="btn_text_stop" translatable="false">Stop</string>
 </resources>

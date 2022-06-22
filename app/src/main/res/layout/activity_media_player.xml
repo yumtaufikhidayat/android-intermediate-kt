@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/value_16dp"
+    tools:context=".media.mediaplayer.MediaPlayerActivity">
+
+    <TextView
+        android:id="@+id/tvMediaPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_mediaplayer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPlaySound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text_play"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/tvMediaPlayer"
+        app:layout_constraintStart_toStartOf="@id/tvMediaPlayer"/>
+
+    <Button
+        android:id="@+id/btnStopSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/value_16dp"
+        android:text="@string/btn_text_stop"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toTopOf="@id/btnPlaySound"
+        app:layout_constraintStart_toEndOf="@id/btnPlaySound"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
