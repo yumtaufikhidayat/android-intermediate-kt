@@ -29,9 +29,11 @@
         <entry key="app/src/main/res/layout/activity_main_animation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_media_player.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_media_player_service.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_motion_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_seats.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.435546875" />
+        <entry key="app/src/main/res/layout/activity_service_media_player.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_sound_pool.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.1" />

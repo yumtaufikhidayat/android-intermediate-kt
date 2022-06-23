@@ -15,6 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
+        <service
+            android:name=".media.mediaplayerservice.MediaService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".media.mediaplayer.MediaPlayerActivity"
+            android:exported="false" />
         <activity
             android:name=".media.soundpool.SoundPoolActivity"
             android:exported="false" />
@@ -107,7 +114,7 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".media.mediaplayer.MediaPlayerActivity"
+            android:name=".media.mediaplayerservice.ServiceMediaPlayerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
