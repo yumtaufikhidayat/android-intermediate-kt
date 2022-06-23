@@ -38,7 +38,7 @@ class ExoPlayerActivity : AppCompatActivity() {
         }
     }
 
-    private fun hideSystemUI() = with(binding){
+    private fun hideSystemUI() = with(binding) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         WindowInsetsControllerCompat(window, playerVideoView).let { windowInsetsControllerCompat ->
             windowInsetsControllerCompat.hide(WindowInsetsCompat.Type.systemBars())
