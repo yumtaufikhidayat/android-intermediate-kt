@@ -51,24 +51,30 @@ dependencies {
 
     // ViewModel + LiveData
     def lifecycleVersion = "2.4.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycleVersion}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycleVersion}"
 
     // Android KTX
     implementation 'androidx.activity:activity-ktx:1.4.0'
     implementation 'androidx.core:core-ktx:1.8.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
 
     // Coroutine
     def coroutineVersion = "1.6.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
 
     // ExoPlayer
     def exoPlayerVersion = "2.18.0"
-    implementation "com.google.android.exoplayer:exoplayer-core:$exoPlayerVersion"
-    implementation "com.google.android.exoplayer:exoplayer-ui:$exoPlayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-core:${exoPlayerVersion}"
+    implementation "com.google.android.exoplayer:exoplayer-ui:${exoPlayerVersion}"
+
+//    CameraX
+    def camerax_version = "1.1.0-beta02"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
 }
