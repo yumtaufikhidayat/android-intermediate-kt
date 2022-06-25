@@ -19,7 +19,7 @@
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
         <activity
-            android:name=".media.camerax.CameraActivity"
+            android:name=".media.cameraxgallery.CameraActivity"
             android:exported="false" />
         <activity
             android:name=".media.exoplayer.ExoPlayerActivity"
@@ -127,7 +127,7 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".media.camerax.CameraXActivity"
+            android:name=".media.cameraxgallery.MainCameraXActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

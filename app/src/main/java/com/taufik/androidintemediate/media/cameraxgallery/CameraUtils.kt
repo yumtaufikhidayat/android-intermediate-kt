@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.media.camerax
+package com.taufik.androidintemediate.media.cameraxgallery
 
 import android.app.Application
 import android.content.Context

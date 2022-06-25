@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.media.camerax
+package com.taufik.androidintemediate.media.cameraxgallery
 
 import android.Manifest
 import android.content.Intent
@@ -10,13 +10,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.taufik.androidintemediate.databinding.ActivityCameraXBinding
+import com.taufik.androidintemediate.databinding.ActivityMainCameraXBinding
 import java.io.File
 
-class CameraXActivity : AppCompatActivity() {
+class MainCameraXActivity : AppCompatActivity() {
 
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
-        ActivityCameraXBinding.inflate(layoutInflater)
+        ActivityMainCameraXBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
