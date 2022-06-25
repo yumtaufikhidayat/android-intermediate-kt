@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
         <activity
+            android:name=".CameraActivity"
+            android:exported="false" />
+        <activity
             android:name=".media.exoplayer.ExoPlayerActivity"
             android:exported="false" />
         <activity

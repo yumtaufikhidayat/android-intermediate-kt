@@ -114,4 +114,9 @@
     <string name="text_mediaplayer" translatable="false">Test Mediaplayer</string>
     <string name="text_service_mediaplayer" translatable="false">Test Service Mediaplayer</string>
     <string name="btn_text_stop" translatable="false">Stop</string>
+
+    <string name="camera_x" translatable="false">CameraX</string>
+    <string name="camera" translatable="false">Kamera</string>
+    <string name="gallery" translatable="false">Galeri</string>
+    <string name="upload" translatable="false">Unggah</string>
 </resources>

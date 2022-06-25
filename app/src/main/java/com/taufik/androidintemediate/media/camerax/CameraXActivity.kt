@@ -13,5 +13,30 @@ class CameraXActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        setAction()
+    }
+
+    private fun setAction() = with(binding) {
+        btnCameraX.setOnClickListener { startCameraX() }
+        btnCamera.setOnClickListener { startCamera() }
+        btnGallery.setOnClickListener { startGallery() }
+        btnUpload.setOnClickListener { uploadImage() }
+    }
+
+    private fun startCameraX() {
+
+    }
+
+    private fun startCamera() {
+
+    }
+
+    private fun startGallery() {
+
+    }
+
+    private fun uploadImage() {
+
     }
 }
