@@ -3,13 +3,17 @@ package com.taufik.androidintemediate.media.cameraxgallery
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import com.taufik.androidintemediate.databinding.ActivityMainCameraXBinding
 import java.io.File
 
@@ -50,7 +54,20 @@ class MainCameraXActivity : AppCompatActivity() {
     }
 
     private fun startTakePhoto() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        launcherIntentCamera.launch(intent)
 
+        createCustomTempFile(application).also {
+            val photoURI: Uri = FileProvider.getUriForFile(
+                this,
+                "com.taufik.androidintemediate.media.cameraxgallery",
+                it
+            )
+
+            currentPhotoPath = it.absolutePath
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+            launcherIntentCamera.launch(intent)
+        }
     }
 
     private fun startGallery() {
@@ -62,15 +79,28 @@ class MainCameraXActivity : AppCompatActivity() {
     }
 
     private val launcherIntentCameraX = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        if (it.resultCode == CAMERA_X_RESULT) {
-            val myFile = it.data?.getSerializableExtra(EXTRA_PICTURE) as File
-            val isBackCamera = it.data?.getBooleanExtra(EXTRA_BACK_CAMERA, true) as Boolean
+        with(binding) {
+            if (it.resultCode == CAMERA_X_RESULT) {
+                val myFile = it.data?.getSerializableExtra(EXTRA_PICTURE) as File
+                val isBackCamera = it.data?.getBooleanExtra(EXTRA_BACK_CAMERA, true) as Boolean
 
-            val result = rotateBitmap(
-                BitmapFactory.decodeFile(myFile.path),
-                isBackCamera
-            )
-            binding.imgPreview.setImageBitmap(result)
+                val result = rotateBitmap(
+                    BitmapFactory.decodeFile(myFile.path),
+                    isBackCamera
+                )
+
+                imgPreview.setImageBitmap(result)
+            }
+        }
+    }
+
+    private lateinit var currentPhotoPath: String
+    private val launcherIntentCamera = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        with(binding) {
+            if (it.resultCode == RESULT_OK) {
+                val imageBitmap = it.data?.extras?.get("data") as Bitmap
+                imgPreview.setImageBitmap(imageBitmap)
+            }
         }
     }
 

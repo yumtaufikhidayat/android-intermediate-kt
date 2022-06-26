@@ -47,6 +47,7 @@
         <entry key="app/src/main/res/layout/item_row_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_widget.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/random_number_widget.xml" value="0.1" />
+        <entry key="app/src/main/res/xml/file_paths.xml" value="0.2001953125" />
       </map>
     </option>
   </component>
