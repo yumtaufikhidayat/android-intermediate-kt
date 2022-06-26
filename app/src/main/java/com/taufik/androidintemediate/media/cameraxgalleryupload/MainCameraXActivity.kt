@@ -1,7 +1,8 @@
-package com.taufik.androidintemediate.media.cameraxgallery
+package com.taufik.androidintemediate.media.cameraxgalleryupload
 
 import android.Manifest
 import android.content.Intent
+import android.content.Intent.ACTION_GET_CONTENT
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -22,6 +23,8 @@ class MainCameraXActivity : AppCompatActivity() {
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityMainCameraXBinding.inflate(layoutInflater)
     }
+
+    private lateinit var currentPhotoPath: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +74,13 @@ class MainCameraXActivity : AppCompatActivity() {
     }
 
     private fun startGallery() {
+        val intent = Intent().apply {
+            action = ACTION_GET_CONTENT
+            type = "image/*"
+        }
 
+        val chooser = Intent.createChooser(intent, "Pilih gambar")
+        launcherIntentGallery.launch(chooser)
     }
 
     private fun uploadImage() {
@@ -94,12 +103,21 @@ class MainCameraXActivity : AppCompatActivity() {
         }
     }
 
-    private lateinit var currentPhotoPath: String
     private val launcherIntentCamera = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         with(binding) {
             if (it.resultCode == RESULT_OK) {
                 val imageBitmap = it.data?.extras?.get("data") as Bitmap
                 imgPreview.setImageBitmap(imageBitmap)
+            }
+        }
+    }
+
+    private val launcherIntentGallery = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        with(binding) {
+            if (it.resultCode == RESULT_OK) {
+                val selectedImage: Uri = it.data?.data as Uri
+                val myFile = uriToFile(selectedImage, this@MainCameraXActivity)
+                imgPreview.setImageURI(selectedImage)
             }
         }
     }

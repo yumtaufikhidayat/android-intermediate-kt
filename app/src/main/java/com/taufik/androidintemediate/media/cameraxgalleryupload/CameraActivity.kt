@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.media.cameraxgallery
+package com.taufik.androidintemediate.media.cameraxgalleryupload
 
 import android.content.Intent
 import android.os.Build
@@ -15,8 +15,8 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.taufik.androidintemediate.databinding.ActivityCameraBinding
-import com.taufik.androidintemediate.media.cameraxgallery.MainCameraXActivity.Companion.EXTRA_BACK_CAMERA
-import com.taufik.androidintemediate.media.cameraxgallery.MainCameraXActivity.Companion.EXTRA_PICTURE
+import com.taufik.androidintemediate.media.cameraxgalleryupload.MainCameraXActivity.Companion.EXTRA_BACK_CAMERA
+import com.taufik.androidintemediate.media.cameraxgalleryupload.MainCameraXActivity.Companion.EXTRA_PICTURE
 
 class CameraActivity : AppCompatActivity() {
 
