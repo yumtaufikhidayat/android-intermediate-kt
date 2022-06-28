@@ -141,7 +141,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.taufik.androidintemediate.media.cameraxgalleryupload"
+            android:authorities="com.taufik.androidintemediate.media.cameraxgallery"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
