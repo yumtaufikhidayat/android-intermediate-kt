@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.content.Intent.ACTION_GET_CONTENT
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
@@ -18,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.taufik.androidintemediate.databinding.ActivityMainCameraXBinding
 import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.createCustomTempFile
+import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.reduceFileImage
 import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.rotateBitmap
 import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.uriToFile
 import com.taufik.androidintemediate.media.cameraxgalleryupload.viewmodel.CameraXViewModel
@@ -26,9 +26,7 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
-import java.io.ByteArrayOutputStream
 import java.io.File
-import java.io.FileOutputStream
 
 class MainCameraXActivity : AppCompatActivity() {
 
@@ -88,11 +86,11 @@ class MainCameraXActivity : AppCompatActivity() {
 
     private fun startTakePhoto() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        launcherIntentCamera.launch(intent)
+        intent.resolveActivity(packageManager)
 
         createCustomTempFile(application).also {
             val photoURI: Uri = FileProvider.getUriForFile(
-                this,
+                this@MainCameraXActivity,
                 "com.taufik.androidintemediate.media.cameraxgallery",
                 it
             )
@@ -135,23 +133,6 @@ class MainCameraXActivity : AppCompatActivity() {
         }
     }
 
-    private fun reduceFileImage(file: File): File {
-        val bitmap = BitmapFactory.decodeFile(file.path)
-        var compressQuality = 100
-        var streamLength: Int
-
-        do {
-            val bmpStream = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream)
-            val bmpPicByteArray = bmpStream.toByteArray()
-            streamLength = bmpPicByteArray.size
-            compressQuality -= 5
-        } while (streamLength > 1_000_000)
-
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
-        return file
-    }
-
     private val launcherIntentCameraX = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         with(binding) {
             if (it.resultCode == CAMERA_X_RESULT) {
@@ -172,10 +153,11 @@ class MainCameraXActivity : AppCompatActivity() {
     private val launcherIntentCamera = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         with(binding) {
             if (it.resultCode == RESULT_OK) {
-                val imageBitmap = it.data?.extras?.get("data") as Bitmap
                 val myFile = File(currentPhotoPath)
                 getFile = myFile
-                imgPreview.setImageBitmap(imageBitmap)
+
+                val result = BitmapFactory.decodeFile(getFile?.path)
+                imgPreview.setImageBitmap(result)
             }
         }
     }
