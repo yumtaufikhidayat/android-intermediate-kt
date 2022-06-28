@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.media.cameraxgalleryupload
+package com.taufik.androidintemediate.media.cameraxgalleryupload.utils
 
 import android.app.Application
 import android.content.ContentResolver

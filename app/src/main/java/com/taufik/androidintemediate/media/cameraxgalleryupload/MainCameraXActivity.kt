@@ -11,20 +11,35 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.taufik.androidintemediate.databinding.ActivityMainCameraXBinding
+import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.createCustomTempFile
+import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.rotateBitmap
+import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.uriToFile
+import com.taufik.androidintemediate.media.cameraxgalleryupload.viewmodel.CameraXViewModel
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import java.io.ByteArrayOutputStream
 import java.io.File
+import java.io.FileOutputStream
 
 class MainCameraXActivity : AppCompatActivity() {
 
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityMainCameraXBinding.inflate(layoutInflater)
     }
+    
+    private val viewModel: CameraXViewModel by viewModels()
 
     private lateinit var currentPhotoPath: String
+    private var getFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +47,7 @@ class MainCameraXActivity : AppCompatActivity() {
 
         checkPermissions()
         setAction()
+        initObserver()
     }
 
     private fun checkPermissions() {
@@ -49,6 +65,20 @@ class MainCameraXActivity : AppCompatActivity() {
         btnCamera.setOnClickListener { startTakePhoto() }
         btnGallery.setOnClickListener { startGallery() }
         btnUpload.setOnClickListener { uploadImage() }
+    }
+
+    private fun initObserver() {
+        viewModel.isUploadSuccess.observe(this) {
+            showToast(it)
+        }
+    }
+
+    private fun showToast(state: Boolean) {
+        if (state) {
+            Toast.makeText(this, "Berhasil upload", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Gagal instance retrofit", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun startCameraX() {
@@ -84,7 +114,42 @@ class MainCameraXActivity : AppCompatActivity() {
     }
 
     private fun uploadImage() {
+        if (getFile != null) {
+            val file = reduceFileImage(getFile as File)
+            val description = "Ini adalah deskripsi gambar".toRequestBody("text/plain".toMediaType())
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "photo",
+                file.name,
+                requestImageFile
+            )
 
+            viewModel.apply {
+                uploadImage(imageMultipart, description)
+                uploadImage.observe(this@MainCameraXActivity) {
+                    Toast.makeText(this@MainCameraXActivity, it.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else {
+            Toast.makeText(this, "Silakan masukkan berkas gambar terlebih dahulu", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun reduceFileImage(file: File): File {
+        val bitmap = BitmapFactory.decodeFile(file.path)
+        var compressQuality = 100
+        var streamLength: Int
+
+        do {
+            val bmpStream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream)
+            val bmpPicByteArray = bmpStream.toByteArray()
+            streamLength = bmpPicByteArray.size
+            compressQuality -= 5
+        } while (streamLength > 1_000_000)
+
+        bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
+        return file
     }
 
     private val launcherIntentCameraX = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -92,6 +157,7 @@ class MainCameraXActivity : AppCompatActivity() {
             if (it.resultCode == CAMERA_X_RESULT) {
                 val myFile = it.data?.getSerializableExtra(EXTRA_PICTURE) as File
                 val isBackCamera = it.data?.getBooleanExtra(EXTRA_BACK_CAMERA, true) as Boolean
+                getFile = myFile
 
                 val result = rotateBitmap(
                     BitmapFactory.decodeFile(myFile.path),
@@ -107,6 +173,8 @@ class MainCameraXActivity : AppCompatActivity() {
         with(binding) {
             if (it.resultCode == RESULT_OK) {
                 val imageBitmap = it.data?.extras?.get("data") as Bitmap
+                val myFile = File(currentPhotoPath)
+                getFile = myFile
                 imgPreview.setImageBitmap(imageBitmap)
             }
         }
@@ -117,6 +185,7 @@ class MainCameraXActivity : AppCompatActivity() {
             if (it.resultCode == RESULT_OK) {
                 val selectedImage: Uri = it.data?.data as Uri
                 val myFile = uriToFile(selectedImage, this@MainCameraXActivity)
+                getFile = myFile
                 imgPreview.setImageURI(selectedImage)
             }
         }

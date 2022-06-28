@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat
 import com.taufik.androidintemediate.databinding.ActivityCameraBinding
 import com.taufik.androidintemediate.media.cameraxgalleryupload.MainCameraXActivity.Companion.EXTRA_BACK_CAMERA
 import com.taufik.androidintemediate.media.cameraxgalleryupload.MainCameraXActivity.Companion.EXTRA_PICTURE
+import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.createFile
 
 class CameraActivity : AppCompatActivity() {
 
