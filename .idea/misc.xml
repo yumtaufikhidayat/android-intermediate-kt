@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_button_disable.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_capture.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_close.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_outline_settings.xml" value="0.176" />
         <entry key="app/src/main/res/drawable/ic_switch_camera.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/activity_accessbility.xml" value="0.3729166666666667" />
@@ -25,24 +29,25 @@
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_camera_x.xml" value="0.306103515625" />
         <entry key="app/src/main/res/layout/activity_canvas.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_custom_button_edittext.xml" value="0.2147887323943662" />
         <entry key="app/src/main/res/layout/activity_detail_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_exo_player.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_formatting_information.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_localization.xml" value="0.23229166666666667" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main_animation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_media_player.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_media_player_service.xml" value="0.435546875" />
-        <entry key="app/src/main/res/layout/activity_motion_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_motion_main.xml" value="0.505859375" />
         <entry key="app/src/main/res/layout/activity_seats.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_service_media_player.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.20333333333333334" />
         <entry key="app/src/main/res/layout/activity_sound_pool.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.335" />
         <entry key="app/src/main/res/layout/image_banner_widget.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/item_row_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_widget.xml" value="0.23229166666666667" />
