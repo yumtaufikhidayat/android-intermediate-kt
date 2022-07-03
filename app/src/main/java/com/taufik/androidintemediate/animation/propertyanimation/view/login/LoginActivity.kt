@@ -50,7 +50,6 @@ class LoginActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         }
-
         supportActionBar?.hide()
     }
 
