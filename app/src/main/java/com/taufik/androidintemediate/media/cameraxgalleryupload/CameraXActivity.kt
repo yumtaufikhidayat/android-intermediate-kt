@@ -19,7 +19,7 @@ import com.taufik.androidintemediate.media.cameraxgalleryupload.MainCameraXActiv
 import com.taufik.androidintemediate.media.cameraxgalleryupload.MainCameraXActivity.Companion.EXTRA_PICTURE
 import com.taufik.androidintemediate.media.cameraxgalleryupload.utils.createFile
 
-class CameraActivity : AppCompatActivity() {
+class CameraXActivity : AppCompatActivity() {
 
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityCameraBinding.inflate(layoutInflater)
@@ -45,7 +45,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun startCamera() = with(binding) {
-        val cameraProvideFuture = ProcessCameraProvider.getInstance(this@CameraActivity)
+        val cameraProvideFuture = ProcessCameraProvider.getInstance(this@CameraXActivity)
         cameraProvideFuture.addListener({
             val cameraProvider: ProcessCameraProvider = cameraProvideFuture.get()
             val preview = Preview.Builder()
@@ -59,15 +59,15 @@ class CameraActivity : AppCompatActivity() {
             try {
                 cameraProvider.unbindAll()
                 cameraProvider.bindToLifecycle(
-                    this@CameraActivity,
+                    this@CameraXActivity,
                     cameraSelector,
                     preview,
                     imageCapture
                 )
             } catch (e: Exception) {
-                Toast.makeText(this@CameraActivity, "Gagal memunculkan kamera", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@CameraXActivity, "Gagal memunculkan kamera", Toast.LENGTH_SHORT).show()
             }
-        }, ContextCompat.getMainExecutor(this@CameraActivity))
+        }, ContextCompat.getMainExecutor(this@CameraXActivity))
     }
 
     private fun takePhoto() {
@@ -89,7 +89,7 @@ class CameraActivity : AppCompatActivity() {
 
                 override fun onError(exception: ImageCaptureException) {
                     Log.d(TAG, "onError: ${exception.printStackTrace()}")
-                    Toast.makeText(this@CameraActivity, "Gagal mengambil gambar", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@CameraXActivity, "Gagal mengambil gambar", Toast.LENGTH_SHORT).show()
                 }
             }
         )

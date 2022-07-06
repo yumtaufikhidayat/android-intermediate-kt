@@ -22,7 +22,7 @@
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
         <activity
-            android:name=".media.cameraxgalleryupload.CameraActivity"
+            android:name=".media.cameraxgalleryupload.CameraXActivity"
             android:exported="false" />
         <activity
             android:name=".media.exoplayer.ExoPlayerActivity"
