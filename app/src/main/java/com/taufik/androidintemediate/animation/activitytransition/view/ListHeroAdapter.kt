@@ -5,10 +5,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.core.util.Pair
 import com.bumptech.glide.Glide
 import com.taufik.androidintemediate.animation.activitytransition.model.Hero
 import com.taufik.androidintemediate.animation.activitytransition.view.DetailHeroActivity.Companion.EXTRA_HERO

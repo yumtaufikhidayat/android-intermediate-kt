@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.animation.activitytransition.model.Hero
 import com.taufik.androidintemediate.databinding.ActivityMainHeroBinding
-import java.util.ArrayList
 
 class MainHeroActivity : AppCompatActivity() {
 
