@@ -34,9 +34,9 @@ class MainCameraXActivity : AppCompatActivity() {
         ActivityMainCameraXBinding.inflate(layoutInflater)
     }
     
-    private val viewModel: CameraXViewModel by viewModels()
-
     private lateinit var currentPhotoPath: String
+
+    private val viewModel: CameraXViewModel by viewModels()
     private var getFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
