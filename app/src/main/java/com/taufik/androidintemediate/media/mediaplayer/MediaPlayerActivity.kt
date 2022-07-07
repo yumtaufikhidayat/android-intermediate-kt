@@ -2,8 +2,8 @@ package com.taufik.androidintemediate.media.mediaplayer
 
 import android.media.AudioAttributes
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.databinding.ActivityMediaPlayerBinding
 import java.io.IOException

@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import kotlinx.coroutines.*
-import java.lang.UnsupportedOperationException
 
 class MyService : Service() {
     
