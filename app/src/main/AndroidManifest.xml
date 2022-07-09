@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -21,6 +24,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCBi5NiIjTlK3g5-GCs0EuhAHirG7dB3Ao"/>
+        <activity
+            android:name=".media.cameraxgalleryupload.MainCameraXActivity"
+            android:exported="false" />
         <activity
             android:name=".media.cameraxgalleryupload.CameraXActivity"
             android:exported="false" />
@@ -130,7 +139,7 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".media.cameraxgalleryupload.MainCameraXActivity"
+            android:name=".geolocation.googlemaps.GoogleMapsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

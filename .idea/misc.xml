@@ -6,6 +6,7 @@
         <entry key="../../../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_button_disable.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_android.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1" />
@@ -33,6 +34,7 @@
         <entry key="app/src/main/res/layout/activity_detail_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_exo_player.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_formatting_information.xml" value="0.435546875" />
+        <entry key="app/src/main/res/layout/activity_google_maps.xml" value="0.43166666666666664" />
         <entry key="app/src/main/res/layout/activity_localization.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -52,6 +54,7 @@
         <entry key="app/src/main/res/layout/item_row_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_widget.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/random_number_widget.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/map_options.xml" value="0.45666666666666667" />
         <entry key="app/src/main/res/xml/file_paths.xml" value="0.2001953125" />
       </map>
     </option>

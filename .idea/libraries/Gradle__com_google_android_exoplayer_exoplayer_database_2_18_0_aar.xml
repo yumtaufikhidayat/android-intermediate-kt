@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.exoplayer:exoplayer-database:2.18.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/45ab81f72c2e44e68b42db29b9a39f02/transformed/exoplayer-database-2.18.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0ff528094f0167510639bc4900290fbd/transformed/exoplayer-database-2.18.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/45ab81f72c2e44e68b42db29b9a39f02/transformed/exoplayer-database-2.18.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/45ab81f72c2e44e68b42db29b9a39f02/transformed/exoplayer-database-2.18.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/45ab81f72c2e44e68b42db29b9a39f02/transformed/exoplayer-database-2.18.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0ff528094f0167510639bc4900290fbd/transformed/exoplayer-database-2.18.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0ff528094f0167510639bc4900290fbd/transformed/exoplayer-database-2.18.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0ff528094f0167510639bc4900290fbd/transformed/exoplayer-database-2.18.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

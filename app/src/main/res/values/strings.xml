@@ -119,4 +119,10 @@
     <string name="camera" translatable="false">Kamera</string>
     <string name="gallery" translatable="false">Galeri</string>
     <string name="upload" translatable="false">Unggah</string>
+
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="normal_type" translatable="false">Normal</string>
+    <string name="satellite_type" translatable="false">Satellite</string>
+    <string name="terrain_type" translatable="false">Terrain</string>
+    <string name="hybrid_type" translatable="false">Hybrid</string>
 </resources>
