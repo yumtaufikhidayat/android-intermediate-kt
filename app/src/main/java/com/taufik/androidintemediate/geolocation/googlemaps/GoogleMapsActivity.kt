@@ -6,6 +6,7 @@ import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -24,6 +25,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.databinding.ActivityGoogleMapsBinding
+import com.taufik.androidintemediate.geolocation.googlemaps.data.TourismPlace
+import java.io.IOException
+import java.util.*
 
 class GoogleMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -32,6 +36,7 @@ class GoogleMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private lateinit var mMap: GoogleMap
+    private val boundsBuilder = LatLngBounds.Builder()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,15 +49,17 @@ class GoogleMapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        mMap.uiSettings.isZoomControlsEnabled = true
-        mMap.uiSettings.isIndoorLevelPickerEnabled = true
-        mMap.uiSettings.isCompassEnabled = true
-        mMap.uiSettings.isMapToolbarEnabled = true
+        mMap.uiSettings.apply {
+            isZoomControlsEnabled = true
+            isIndoorLevelPickerEnabled = true
+            isCompassEnabled = true
+            isMapToolbarEnabled = true
+        }
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//        val sydney = LatLng(-34.0, 151.0)
+//        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
 
         val dicodingSpace = LatLng(-6.8957643, 107.6338462)
         mMap.addMarker(
@@ -85,9 +92,52 @@ class GoogleMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         getMyLocation()
         setMapStyle()
+        addManyMarkers()
     }
 
+    private fun addManyMarkers() {
+        val tourismPlace = listOf(
+            TourismPlace("Floating Market Lembang", -6.8168954,107.6151046),
+            TourismPlace("The Great Asia Africa", -6.8331128,107.6048483),
+            TourismPlace("Rabbit Town", -6.8668408,107.608081),
+            TourismPlace("Alun-Alun Kota Bandung", -6.9218518,107.6025294),
+            TourismPlace("Orchid Forest Cikole", -6.780725, 107.637409),
+        )
 
+        tourismPlace.forEach {  tourism ->
+            val latLng = LatLng(tourism.latitude, tourism.longitude)
+            val addressName = getAddressName(tourism.latitude, tourism.longitude) // reverse geo coding untuk mendapatkan alamat
+            mMap.addMarker(MarkerOptions().position(latLng).title(tourism.name))?.snippet = addressName
+            boundsBuilder.include(latLng) // menampilkan semua marker dalam satu layar
+        }
+
+        // menampilkan semua marker dalam satu layar
+        val bounds = boundsBuilder.build()
+        mMap.animateCamera(
+            CameraUpdateFactory.newLatLngBounds(
+                bounds,
+                resources.displayMetrics.widthPixels,
+                resources.displayMetrics.heightPixels,
+                300
+            )
+        )
+    }
+
+    private fun getAddressName(latitude: Double, longitude: Double): String? {
+        var addressName: String? = null
+        val geocoder = Geocoder(this, Locale.getDefault())
+        try {
+            val list = geocoder.getFromLocation(latitude, longitude, 1)
+            if (list != null && list.size != 0) {
+                addressName = list[0].getAddressLine(0)
+                Log.d(TAG, "getAddressName: $addressName")
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+        return addressName
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.map_options, menu)
