@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.localizationaccessbility.accessibility
+package com.taufik.androidintemediate.localizationaccessibility.accessibility
 
 import android.content.Intent
 import android.os.Build
@@ -9,9 +9,9 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.databinding.ActivityAccessibilityBinding
-import com.taufik.androidintemediate.localizationaccessbility.accessibility.Helper.withCurrencyFormat
-import com.taufik.androidintemediate.localizationaccessbility.accessibility.Helper.withDateFormat
-import com.taufik.androidintemediate.localizationaccessbility.accessibility.Helper.withNumberingFormat
+import com.taufik.androidintemediate.localizationaccessibility.accessibility.Helper.withCurrencyFormat
+import com.taufik.androidintemediate.localizationaccessibility.accessibility.Helper.withDateFormat
+import com.taufik.androidintemediate.localizationaccessibility.accessibility.Helper.withNumberingFormat
 
 class AccessibilityActivity : AppCompatActivity() {
 

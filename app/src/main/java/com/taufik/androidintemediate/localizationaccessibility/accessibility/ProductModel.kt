@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.localizationaccessbility.formattinginformation
+package com.taufik.androidintemediate.localizationaccessibility.accessibility
 
 data class ProductModel(
     val name: String,

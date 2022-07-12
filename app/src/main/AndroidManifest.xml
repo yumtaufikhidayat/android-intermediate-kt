@@ -89,16 +89,16 @@
             android:enabled="true" />
 
         <activity
-            android:name=".localizationaccessbility.accessibility.AccessibilityActivity"
+            android:name=".localizationaccessibility.accessibility.AccessibilityActivity"
             android:exported="false" />
         <activity
-            android:name=".localizationaccessbility.formattinginformation.FormattingInformationActivity"
+            android:name=".localizationaccessibility.formattinginformation.FormattingInformationActivity"
             android:exported="false" />
         <activity
-            android:name=".localizationaccessbility.adaptivelayout.AdaptiveLayoutActivity"
+            android:name=".localizationaccessibility.adaptivelayout.AdaptiveLayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".localizationaccessbility.localization.LocalizationActivity"
+            android:name=".localizationaccessibility.localization.LocalizationActivity"
             android:exported="false" />
         <activity
             android:name=".animation.motionlayout.MotionMainActivity"

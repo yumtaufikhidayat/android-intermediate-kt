@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.localizationaccessbility.accessibility
+package com.taufik.androidintemediate.localizationaccessibility.accessibility
 
 import android.content.Context
 import com.taufik.androidintemediate.R

@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.localizationaccessbility.formattinginformation
+package com.taufik.androidintemediate.localizationaccessibility.formattinginformation
 
 import android.content.Intent
 import android.os.Build
@@ -9,9 +9,9 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.databinding.ActivityFormattingInformationBinding
-import com.taufik.androidintemediate.localizationaccessbility.formattinginformation.Helper.withCurrencyFormat
-import com.taufik.androidintemediate.localizationaccessbility.formattinginformation.Helper.withDateFormat
-import com.taufik.androidintemediate.localizationaccessbility.formattinginformation.Helper.withNumberingFormat
+import com.taufik.androidintemediate.localizationaccessibility.formattinginformation.Helper.withCurrencyFormat
+import com.taufik.androidintemediate.localizationaccessibility.formattinginformation.Helper.withDateFormat
+import com.taufik.androidintemediate.localizationaccessibility.formattinginformation.Helper.withNumberingFormat
 
 class FormattingInformationActivity : AppCompatActivity() {
 

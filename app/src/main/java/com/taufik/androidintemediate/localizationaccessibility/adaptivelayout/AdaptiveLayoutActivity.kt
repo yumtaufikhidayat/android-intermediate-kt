@@ -1,18 +1,18 @@
-package com.taufik.androidintemediate.localizationaccessbility.localization
+package com.taufik.androidintemediate.localizationaccessibility.adaptivelayout
 
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
-import com.taufik.androidintemediate.databinding.ActivityLocalizationBinding
+import com.taufik.androidintemediate.databinding.ActivityAdaptiveLayoutBinding
 
-class LocalizationActivity : AppCompatActivity() {
+class AdaptiveLayoutActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLocalizationBinding
+    private lateinit var binding: ActivityAdaptiveLayoutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLocalizationBinding.inflate(layoutInflater)
+        binding = ActivityAdaptiveLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.hide()

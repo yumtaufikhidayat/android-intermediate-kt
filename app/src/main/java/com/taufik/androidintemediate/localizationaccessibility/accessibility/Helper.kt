@@ -1,4 +1,4 @@
-package com.taufik.androidintemediate.localizationaccessbility.formattinginformation
+package com.taufik.androidintemediate.localizationaccessibility.accessibility
 
 import java.text.DateFormat
 import java.text.NumberFormat
