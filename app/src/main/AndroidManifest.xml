@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -36,6 +37,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidIntemediate"
         tools:targetApi="31">
+        <receiver
+            android:name=".GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity
+            android:name=".geolocation.locationtracker.LocationTrackerActivity"
+            android:exported="false" />
         <activity
             android:name=".geolocation.googlemaps.GoogleMapsActivity"
             android:exported="false" />
@@ -156,7 +165,7 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".geolocation.locationtracker.LocationTrackerActivity"
+            android:name=".geolocation.geofence.GeofenceActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

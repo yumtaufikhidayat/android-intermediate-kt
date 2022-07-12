@@ -34,9 +34,10 @@
         <entry key="app/src/main/res/layout/activity_detail_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_exo_player.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_formatting_information.xml" value="0.435546875" />
+        <entry key="app/src/main/res/layout/activity_geofence.xml" value="0.21166666666666667" />
         <entry key="app/src/main/res/layout/activity_google_maps.xml" value="0.43166666666666664" />
         <entry key="app/src/main/res/layout/activity_localization.xml" value="0.23229166666666667" />
-        <entry key="app/src/main/res/layout/activity_location_tracker.xml" value="0.45166666666666666" />
+        <entry key="app/src/main/res/layout/activity_location_tracker.xml" value="0.11439114391143912" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main_animation.xml" value="0.1" />
