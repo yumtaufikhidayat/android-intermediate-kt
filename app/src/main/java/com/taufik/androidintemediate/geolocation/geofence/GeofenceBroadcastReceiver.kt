@@ -35,8 +35,8 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
                         else -> "Invalid transition type"
                     }
 
-                val triggeringGeofences = geofencingEvent.triggeringGeofences
-                val requestId = triggeringGeofences[0].requestId
+                val triggeringGeofence = geofencingEvent.triggeringGeofences
+                val requestId = triggeringGeofence[0].requestId
                 val geofenceTransitionDetails = "$geofenceTransitionString $requestId"
                 Log.i(TAG, "onReceive: $geofenceTransitionDetails")
 
