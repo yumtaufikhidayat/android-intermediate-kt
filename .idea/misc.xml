@@ -10,9 +10,14 @@
         <entry key="app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_bookmark_white.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_broken_image_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_capture.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_close.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_error.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_loading.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_outline_settings.xml" value="0.176" />
+        <entry key="app/src/main/res/drawable/ic_refresh_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_switch_camera.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/activity_accessbility.xml" value="0.3729166666666667" />
         <entry key="app/src/main/res/layout-land/activity_adaptive_layout.xml" value="0.16041666666666668" />
@@ -36,6 +41,7 @@
         <entry key="app/src/main/res/layout/activity_formatting_information.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_geofence.xml" value="0.21166666666666667" />
         <entry key="app/src/main/res/layout/activity_google_maps.xml" value="0.43166666666666664" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/activity_localization.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_location_tracker.xml" value="0.11439114391143912" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
@@ -45,6 +51,7 @@
         <entry key="app/src/main/res/layout/activity_media_player.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_media_player_service.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_motion_main.xml" value="0.505859375" />
+        <entry key="app/src/main/res/layout/activity_news_detail.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/activity_seats.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_service_media_player.xml" value="0.5" />
@@ -52,11 +59,15 @@
         <entry key="app/src/main/res/layout/activity_sound_pool.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/image_banner_widget.xml" value="0.17222222222222222" />
+        <entry key="app/src/main/res/layout/item_news.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/item_row_hero.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_widget.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/layout_error.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/random_number_widget.xml" value="0.1" />
         <entry key="app/src/main/res/menu/map_options.xml" value="0.45666666666666667" />
+        <entry key="app/src/main/res/menu/menu_detail.xml" value="0.1" />
         <entry key="app/src/main/res/xml/file_paths.xml" value="0.2001953125" />
       </map>
     </option>
