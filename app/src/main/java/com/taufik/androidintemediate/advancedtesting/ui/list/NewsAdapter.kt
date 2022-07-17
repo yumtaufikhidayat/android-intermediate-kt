@@ -12,7 +12,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.advancedtesting.data.local.entity.NewsEntity
 import com.taufik.androidintemediate.advancedtesting.ui.detail.NewsDetailActivity
+import com.taufik.androidintemediate.advancedtesting.utils.DateFormatter
 import com.taufik.androidintemediate.databinding.ItemNewsBinding
+import java.util.*
 
 class NewsAdapter: ListAdapter<NewsEntity, NewsAdapter.NewsViewHolder>(newsDiffCallback) {
 
@@ -28,7 +30,7 @@ class NewsAdapter: ListAdapter<NewsEntity, NewsAdapter.NewsViewHolder>(newsDiffC
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(news: NewsEntity) = with(binding) {
             tvItemTitle.text = news.title
-            tvItemPublishedDate.text = news.publishedAt
+            tvItemPublishedDate.text = DateFormatter.formatDate(news.publishedAt, TimeZone.getDefault().id)
             Glide.with(itemView.context)
                 .load(news.urlToImage)
                 .apply {
