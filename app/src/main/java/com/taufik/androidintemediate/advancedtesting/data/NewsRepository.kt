@@ -41,7 +41,7 @@ class NewsRepository(
         return newsDao.getBookmarkedNews()
     }
 
-    suspend fun saveNews(newsEntity: NewsEntity) {
+    fun saveNews(newsEntity: NewsEntity) {
         CoroutineScope(Dispatchers.IO).launch {
             newsDao.saveNews(newsEntity)
         }
