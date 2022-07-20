@@ -8,6 +8,7 @@ import com.taufik.androidintemediate.advancedtesting.data.local.entity.NewsEntit
 import com.taufik.androidintemediate.advancedtesting.data.local.room.NewsDao
 import com.taufik.androidintemediate.advancedtesting.data.remote.Result
 import com.taufik.androidintemediate.advancedtesting.data.remote.retrofit.ApiService
+import com.taufik.androidintemediate.advancedtesting.utils.wrapEspressoIdlingResource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,22 +19,24 @@ class NewsRepository(
 ) {
     fun getHeadlineNews(): LiveData<Result<List<NewsEntity>>> = liveData {
         emit(Result.Loading)
-        val apiKey = BuildConfig.API_KEY
-        try {
-            val response = apiService.getNews(apiKey)
-            val articles = response.articles
-            val newsList = articles.map { article ->
-                NewsEntity(
-                    article.title,
-                    article.publishedAt,
-                    article.urlToImage,
-                    article.url
-                )
+        wrapEspressoIdlingResource {
+            val apiKey = BuildConfig.API_KEY
+            try {
+                val response = apiService.getNews(apiKey)
+                val articles = response.articles
+                val newsList = articles.map { article ->
+                    NewsEntity(
+                        article.title,
+                        article.publishedAt,
+                        article.urlToImage,
+                        article.url
+                    )
+                }
+                emit(Result.Success(newsList))
+            } catch (e: Exception) {
+                Log.e(TAG, "getHeadlineNews: ${e.message.toString()}")
+                emit(Result.Error(e.message.toString()))
             }
-            emit(Result.Success(newsList))
-        } catch (e: Exception) {
-            Log.e(TAG, "getHeadlineNews: ${e.message.toString()}")
-            emit(Result.Error(e.message.toString()))
         }
     }
 
