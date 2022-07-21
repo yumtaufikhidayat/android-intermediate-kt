@@ -52,6 +52,7 @@
         <entry key="app/src/main/res/layout/activity_media_player_service.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_motion_main.xml" value="0.505859375" />
         <entry key="app/src/main/res/layout/activity_news_detail.xml" value="0.19666666666666666" />
+        <entry key="app/src/main/res/layout/activity_room_relation_db.xml" value="0.4533333333333333" />
         <entry key="app/src/main/res/layout/activity_seats.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_service.xml" value="0.435546875" />
         <entry key="app/src/main/res/layout/activity_service_media_player.xml" value="0.5" />
@@ -63,11 +64,13 @@
         <entry key="app/src/main/res/layout/image_banner_widget.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/item_row_hero.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_student.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_widget.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_error.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/random_number_widget.xml" value="0.1" />
         <entry key="app/src/main/res/menu/map_options.xml" value="0.45666666666666667" />
         <entry key="app/src/main/res/menu/menu_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_option.xml" value="0.11666666666666667" />
         <entry key="app/src/main/res/xml/file_paths.xml" value="0.2001953125" />
       </map>
     </option>
