@@ -12,16 +12,16 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: StudentRepository) : ViewModel(){
 
-    init {
-        insertAllData()
-    }
+//    init {
+//        insertAllData()
+//    }
 
     fun getAllStudent(): LiveData<List<StudentEntity>> = repository.getAllStudent()
     fun getAllStudentAndUniversity(): LiveData<List<StudentAndUniversity>> = repository.getAllStudentAndUniversity()
     fun getAllUniversityAndStudent(): LiveData<List<UniversityAndStudent>> = repository.getAllUniversityAndStudent()
     fun getAllStudentWithCourse(): LiveData<List<StudentWithCourse>> = repository.getAllStudentWithCourse()
 
-    private fun insertAllData() = viewModelScope.launch {
-        repository.insertAllData()
-    }
+//    private fun insertAllData() = viewModelScope.launch {
+//        repository.insertAllData()
+//    }
 }
