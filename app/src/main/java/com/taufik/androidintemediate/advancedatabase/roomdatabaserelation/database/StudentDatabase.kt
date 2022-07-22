@@ -37,20 +37,21 @@ abstract class StudentDatabase : RoomDatabase() {
                         Common.DB_NAME
                     )
                         .fallbackToDestructiveMigration()
-                        .addCallback(object : Callback() {
-                            override fun onCreate(db: SupportSQLiteDatabase) {
-                                super.onCreate(db)
-                                INSTANCE?.let { database ->
-                                    applicationScope.launch {
-                                        val studentDao = database.studentDao()
-                                        studentDao.insertStudent(InitialDataSource.getStudents())
-                                        studentDao.insertUniversity(InitialDataSource.getUniversities())
-                                        studentDao.insertCourse(InitialDataSource.getCourses())
-                                        studentDao.insertCourseStudentCrossRef(InitialDataSource.getCourseStudentRelation())
-                                    }
-                                }
-                            }
-                        })
+                        .createFromAsset("StudentDatabase.db")
+//                        .addCallback(object : Callback() {
+//                            override fun onCreate(db: SupportSQLiteDatabase) {
+//                                super.onCreate(db)
+//                                INSTANCE?.let { database ->
+//                                    applicationScope.launch {
+//                                        val studentDao = database.studentDao()
+//                                        studentDao.insertStudent(InitialDataSource.getStudents())
+//                                        studentDao.insertUniversity(InitialDataSource.getUniversities())
+//                                        studentDao.insertCourse(InitialDataSource.getCourses())
+//                                        studentDao.insertCourseStudentCrossRef(InitialDataSource.getCourseStudentRelation())
+//                                    }
+//                                }
+//                            }
+//                        })
                         .build()
                 }
             }
