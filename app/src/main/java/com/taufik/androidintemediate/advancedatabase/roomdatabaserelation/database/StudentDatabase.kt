@@ -5,12 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseEntity
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseStudentCrossRef
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.Common
 
 @Database(
-    entities = [StudentEntity::class, UniversityEntity::class, CourseEntity::class],
+    entities = [StudentEntity::class, UniversityEntity::class, CourseEntity::class, CourseStudentCrossRef::class],
     version = Common.DB_VERSION,
     exportSchema = false
 )

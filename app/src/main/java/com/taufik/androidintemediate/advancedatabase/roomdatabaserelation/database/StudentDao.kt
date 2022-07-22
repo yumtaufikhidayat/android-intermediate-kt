@@ -16,6 +16,9 @@ interface StudentDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertCourse(course: List<CourseEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertCourseStudentCrossRef(courseStudentCrossRef: List<CourseStudentCrossRef>)
+
     @Query("SELECT * FROM tbl_student")
     fun getAllStudent(): LiveData<List<StudentEntity>>
 
@@ -26,4 +29,8 @@ interface StudentDao {
     @Transaction
     @Query("SELECT * FROM tbl_university")
     fun getAllUniversityAndStudent(): LiveData<List<UniversityAndStudent>>
+
+    @Transaction
+    @Query("SELECT * FROM tbl_student")
+    fun getAllStudentWithCourse(): LiveData<List<StudentWithCourse>>
 }

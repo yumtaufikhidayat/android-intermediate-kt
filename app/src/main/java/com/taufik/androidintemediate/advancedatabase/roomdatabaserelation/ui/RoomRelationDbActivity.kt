@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.MyApplication
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ViewModelFactory
-import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityAndStudent
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentAndUniversityAdapter
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentListAdapter
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentWithCourseAdapter
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.UniversityAndStudentAdapter
 import com.taufik.androidintemediate.databinding.ActivityRoomRelationDbBinding
 
@@ -77,9 +77,19 @@ class RoomRelationDbActivity : AppCompatActivity() {
         }
     }
 
-
     private fun getStudentWithCourse() {
-
+        val studentWithCourseAdapter = StudentWithCourseAdapter()
+        binding.apply {
+            with(rvStudent) {
+                setHasFixedSize(true)
+                layoutManager = LinearLayoutManager(this@RoomRelationDbActivity)
+                adapter = studentWithCourseAdapter
+            }
+        }
+        mainViewModel.getAllStudentWithCourse().observe(this) {
+            Log.i(TAG, "getStudentWithCourse: $it")
+            studentWithCourseAdapter.submitList(it)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

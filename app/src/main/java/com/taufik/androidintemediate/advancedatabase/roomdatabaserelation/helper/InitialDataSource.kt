@@ -1,6 +1,7 @@
 package com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper
 
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseEntity
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseStudentCrossRef
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityEntity
 
@@ -32,6 +33,21 @@ object InitialDataSource {
             CourseEntity(3, "Javascript Basic"),
             CourseEntity(4, "Python Basic"),
             CourseEntity(5, "Dart Basic"),
+        )
+    }
+
+    fun getCourseStudentRelation(): List<CourseStudentCrossRef> {
+        return listOf(
+            CourseStudentCrossRef(1, 1),
+            CourseStudentCrossRef(1, 2),
+            CourseStudentCrossRef(2, 2),
+            CourseStudentCrossRef(2, 5),
+            CourseStudentCrossRef(3, 3),
+            CourseStudentCrossRef(4, 3),
+            CourseStudentCrossRef(4, 4),
+            CourseStudentCrossRef(5, 4),
+            CourseStudentCrossRef(6, 3),
+            CourseStudentCrossRef(6, 4),
         )
     }
 }

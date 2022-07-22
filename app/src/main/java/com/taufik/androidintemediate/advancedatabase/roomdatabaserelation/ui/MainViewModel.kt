@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.StudentRepository
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentAndUniversity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentWithCourse
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityAndStudent
 import kotlinx.coroutines.launch
 
@@ -18,6 +19,7 @@ class MainViewModel(private val repository: StudentRepository) : ViewModel(){
     fun getAllStudent(): LiveData<List<StudentEntity>> = repository.getAllStudent()
     fun getAllStudentAndUniversity(): LiveData<List<StudentAndUniversity>> = repository.getAllStudentAndUniversity()
     fun getAllUniversityAndStudent(): LiveData<List<UniversityAndStudent>> = repository.getAllUniversityAndStudent()
+    fun getAllStudentWithCourse(): LiveData<List<StudentWithCourse>> = repository.getAllStudentWithCourse()
 
     private fun insertAllData() = viewModelScope.launch {
         repository.insertAllData()
