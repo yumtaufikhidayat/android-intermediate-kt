@@ -25,7 +25,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.databinding.ActivityLocationTrackerBinding
-import java.util.ArrayList
 import java.util.concurrent.TimeUnit
 
 class LocationTrackerActivity : AppCompatActivity(), OnMapReadyCallback {
