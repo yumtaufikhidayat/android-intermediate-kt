@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.StudentDao
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentAndUniversity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityAndStudent
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.InitialDataSource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,5 +17,7 @@ class StudentRepository(private val studentDao: StudentDao) {
         CoroutineScope(Dispatchers.IO).launch { studentDao.insertUniversity(InitialDataSource.getUniversities()) }
         CoroutineScope(Dispatchers.IO).launch { studentDao.insertCourse(InitialDataSource.getCourses()) }
     }
+
     fun getAllStudentAndUniversity(): LiveData<List<StudentAndUniversity>> = studentDao.getAllStudentAndUniversity()
+    fun getAllUniversityAndStudent(): LiveData<List<UniversityAndStudent>> = studentDao.getAllUniversityAndStudent()
 }

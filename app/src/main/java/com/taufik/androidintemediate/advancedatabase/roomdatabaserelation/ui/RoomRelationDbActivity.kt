@@ -10,8 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.MyApplication
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ViewModelFactory
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityAndStudent
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentAndUniversityAdapter
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentListAdapter
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.UniversityAndStudentAdapter
 import com.taufik.androidintemediate.databinding.ActivityRoomRelationDbBinding
 
 class RoomRelationDbActivity : AppCompatActivity() {
@@ -61,7 +63,18 @@ class RoomRelationDbActivity : AppCompatActivity() {
     }
 
     private fun getUniversityAndStudent() {
-
+        val universityAndStudentAdapter = UniversityAndStudentAdapter()
+        binding.apply {
+            with(rvStudent) {
+                setHasFixedSize(true)
+                layoutManager = LinearLayoutManager(this@RoomRelationDbActivity)
+                adapter = universityAndStudentAdapter
+            }
+        }
+        mainViewModel.getAllUniversityAndStudent().observe(this) {
+            Log.i(TAG, "getUniversityAndStudent: $it")
+            universityAndStudentAdapter.submitList(it)
+        }
     }
 
 

@@ -2,10 +2,7 @@ package com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.datab
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseEntity
-import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentAndUniversity
-import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
-import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityEntity
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.*
 
 @Dao
 interface StudentDao {
@@ -25,4 +22,8 @@ interface StudentDao {
     @Transaction
     @Query("SELECT * FROM tbl_student")
     fun getAllStudentAndUniversity(): LiveData<List<StudentAndUniversity>>
+
+    @Transaction
+    @Query("SELECT * FROM tbl_university")
+    fun getAllUniversityAndStudent(): LiveData<List<UniversityAndStudent>>
 }
