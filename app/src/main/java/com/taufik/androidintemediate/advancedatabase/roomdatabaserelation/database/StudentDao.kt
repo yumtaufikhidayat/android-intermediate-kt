@@ -13,14 +13,14 @@ import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.databa
 interface StudentDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertStudent(student: List<StudentEntity>)
+    fun insertStudent(student: List<StudentEntity>)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertUniversity(university: List<UniversityEntity>)
+    fun insertUniversity(university: List<UniversityEntity>)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertCourse(course: List<CourseEntity>)
+    fun insertCourse(course: List<CourseEntity>)
 
-    @Query("SELECT * FROM studententity")
+    @Query("SELECT * FROM tbl_student")
     fun getAllStudent(): LiveData<List<StudentEntity>>
 }

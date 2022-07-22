@@ -2,8 +2,9 @@ package com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.datab
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.Common
 
-@Entity
+@Entity (tableName = Common.STUDENT_ENTITY)
 data class StudentEntity(
     @PrimaryKey
     val studentId: Int,

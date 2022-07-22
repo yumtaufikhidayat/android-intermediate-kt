@@ -21,15 +21,18 @@ class RoomRelationDbActivity : AppCompatActivity() {
         ViewModelFactory((application as MyApplication).repository)
     }
 
+    private lateinit var studentListAdapter: StudentListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        initAdapter()
         getStudent()
     }
 
-    private fun getStudent() {
-        val studentListAdapter = StudentListAdapter()
+    private fun initAdapter() {
+        studentListAdapter = StudentListAdapter()
         binding.apply {
             with(rvStudent) {
                 setHasFixedSize(true)
@@ -37,7 +40,9 @@ class RoomRelationDbActivity : AppCompatActivity() {
                 adapter = studentListAdapter
             }
         }
+    }
 
+    private fun getStudent() {
         mainViewModel.getAllStudent().observe(this) {
             studentListAdapter.submitList(it)
         }
