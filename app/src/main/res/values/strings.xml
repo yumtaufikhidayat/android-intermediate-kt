@@ -144,8 +144,9 @@
     <string name="one_to_many" translatable="false">One to Many</string>
     <string name="many_to_many" translatable="false">Many to Many</string>
 
-    <string name="sort" translatable="false" >Sort</string>
+    <string name="sort" translatable="false">Sort</string>
     <string name="ascending" translatable="false">A-Z</string>
     <string name="descending" translatable="false">Z-A</string>
     <string name="random_sort" translatable="false">Random</string>
+    <string name="retry" translatable="false">Coba lagi</string>
 </resources>

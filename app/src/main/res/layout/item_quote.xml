@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/value_4dp"
+    android:layout_marginHorizontal="@dimen/value_8dp"
+    android:elevation="@dimen/value_4dp"
+    app:cardCornerRadius="@dimen/value_4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/value_16dp">
+
+        <TextView
+            android:id="@+id/tvItemQuote"
+            android:layout_width="@dimen/value_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="start"
+            android:textSize="@dimen/value_16sp"
+            android:textStyle="bold"
+            tools:text="@tools:sample/lorem"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvItemAuthor"
+            android:layout_width="@dimen/value_0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textSize="@dimen/value_14sp"
+            tools:text="@tools:sample/lorem"
+            app:layout_constraintTop_toBottomOf="@id/tvItemQuote"
+            app:layout_constraintStart_toStartOf="@id/tvItemQuote"
+            app:layout_constraintEnd_toEndOf="@id/tvItemQuote"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
