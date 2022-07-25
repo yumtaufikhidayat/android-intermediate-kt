@@ -93,6 +93,7 @@ dependencies {
     def lifecycleVersion = "2.5.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycleVersion}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycleVersion}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycleVersion}"
 
     // Android KTX
     def ktxVersion = "1.5.0"
@@ -134,7 +135,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-location:$mapsVersion"
 
 //    Room
-    def roomVersion = "2.4.2"
+    def roomVersion = "2.4.0-alpha04"
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
     testImplementation "androidx.room:room-testing:$roomVersion"
@@ -146,10 +147,6 @@ dependencies {
 //    Paging
     implementation 'androidx.paging:paging-runtime:2.1.2'
     implementation "androidx.paging:paging-runtime-ktx:3.1.0"
-
-//    Paging
-    implementation 'androidx.paging:paging-runtime:2.1.2'
-    implementation "androidx.paging:paging-runtime-ktx:3.1.0"
-    implementation 'androidx.room:room-paging:2.4.0-rc01'
+    implementation "androidx.room:room-paging:$roomVersion"
 
 }
