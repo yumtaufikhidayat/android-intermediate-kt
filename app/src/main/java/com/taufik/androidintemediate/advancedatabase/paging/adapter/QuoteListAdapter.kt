@@ -30,7 +30,7 @@ class QuoteListAdapter : PagingDataAdapter<QuoteResponseItem, QuoteListAdapter.Q
     }
 
     companion object {
-        private val quoteDiffCallback = object : DiffUtil.ItemCallback<QuoteResponseItem>() {
+        val quoteDiffCallback = object : DiffUtil.ItemCallback<QuoteResponseItem>() {
             override fun areItemsTheSame(
                 oldItem: QuoteResponseItem,
                 newItem: QuoteResponseItem

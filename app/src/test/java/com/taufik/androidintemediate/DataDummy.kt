@@ -1,5 +1,6 @@
 package com.taufik.androidintemediate
 
+import com.taufik.androidintemediate.advancedatabase.paging.data.QuoteResponseItem
 import com.taufik.androidintemediate.advancedtesting.data.local.entity.NewsEntity
 import com.taufik.androidintemediate.advancedtesting.data.remote.response.ArticlesItem
 import com.taufik.androidintemediate.advancedtesting.data.remote.response.NewsResponse
@@ -36,5 +37,18 @@ object DataDummy {
             newsList.add(news)
         }
         return NewsResponse(newsList.size, newsList, "Success")
+    }
+
+    fun generateDummyQuoteResponse(): List<QuoteResponseItem> {
+        val items: MutableList<QuoteResponseItem> = arrayListOf()
+        for (i in 0..100) {
+            val quote = QuoteResponseItem(
+                i.toString(),
+                "author + $i",
+                "quote $i",
+            )
+            items.add(quote)
+        }
+        return items
     }
 }
