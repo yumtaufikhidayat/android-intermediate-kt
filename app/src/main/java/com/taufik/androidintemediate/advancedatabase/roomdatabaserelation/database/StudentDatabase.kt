@@ -1,27 +1,29 @@
 package com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import androidx.room.*
+import androidx.room.migration.AutoMigrationSpec
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseStudentCrossRef
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.Common
-import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.InitialDataSource
+import kotlinx.coroutines.CoroutineScope
 
 @Database(
     entities = [StudentEntity::class, UniversityEntity::class, CourseEntity::class, CourseStudentCrossRef::class],
     version = Common.DB_VERSION,
-    exportSchema = false
+    autoMigrations = [
+        AutoMigration(from = 2, to = 3, spec = StudentDatabase.MyAutoMigration::class)
+                     ],
+    exportSchema = true
 )
 abstract class StudentDatabase : RoomDatabase() {
 
     abstract fun studentDao(): StudentDao
+
+    @RenameColumn(tableName = Common.UNIVERSITY_ENTITY, fromColumnName = "name", toColumnName = "universityName")
+    class MyAutoMigration: AutoMigrationSpec
 
     companion object {
         @Volatile
