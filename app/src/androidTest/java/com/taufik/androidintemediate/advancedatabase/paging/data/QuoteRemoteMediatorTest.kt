@@ -4,6 +4,7 @@ import androidx.paging.*
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.taufik.androidintemediate.advancedatabase.FakeApiService
 import com.taufik.androidintemediate.advancedatabase.paging.database.QuoteDatabase
 import com.taufik.androidintemediate.advancedatabase.paging.network.ApiService
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -45,23 +46,5 @@ class QuoteRemoteMediatorTest {
     @After
     fun tearDown() {
         mockDb.clearAllTables()
-    }
-}
-
-class FakeApiService : ApiService {
-
-    override suspend fun getQuote(page: Int, size: Int): List<QuoteResponseItem> {
-        val items: MutableList<QuoteResponseItem> = arrayListOf()
-
-        for (i in 0..100) {
-            val quote = QuoteResponseItem(
-                i.toString(),
-                "author + $i",
-                "quote $i",
-            )
-            items.add(quote)
-        }
-
-        return items.subList((page - 1) * size, (page - 1) * size + size)
     }
 }

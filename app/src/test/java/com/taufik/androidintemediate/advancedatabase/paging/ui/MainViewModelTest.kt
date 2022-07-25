@@ -1,18 +1,16 @@
 package com.taufik.androidintemediate.advancedatabase.paging.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.AsyncPagingDataDiffer
 import androidx.paging.PagingData
-import androidx.paging.PagingSource
-import androidx.paging.PagingState
-import androidx.recyclerview.widget.ListUpdateCallback
 import com.taufik.androidintemediate.DataDummy
 import com.taufik.androidintemediate.MainDispatcherRule
+import com.taufik.androidintemediate.advancedatabase.QuotePagingSource
 import com.taufik.androidintemediate.advancedatabase.paging.adapter.QuoteListAdapter
 import com.taufik.androidintemediate.advancedatabase.paging.data.QuoteRepository
 import com.taufik.androidintemediate.advancedatabase.paging.data.QuoteResponseItem
+import com.taufik.androidintemediate.advancedatabase.paging.ui.NoopList.noopListUpdateCallback
 import com.taufik.androidintemediate.getOrAwaitValue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -40,7 +38,6 @@ class MainViewModelTest {
     @Test
     fun `when Get Quote Should Not Null and Return Success`() = runTest {
         val dummyQuote = DataDummy.generateDummyQuoteResponse()
-//        val data: PagingData<QuoteResponseItem> = PagingData.from(dummyQuote)
         val data: PagingData<QuoteResponseItem> = QuotePagingSource.snapshot(dummyQuote)
         val expectedQuote = MutableLiveData<PagingData<QuoteResponseItem>>()
         expectedQuote.value = data
@@ -61,27 +58,4 @@ class MainViewModelTest {
         Assert.assertEquals(dummyQuote.size, differ.snapshot().size)
         Assert.assertEquals(dummyQuote[0].author, differ.snapshot()[0]?.author)
     }
-}
-
-class QuotePagingSource : PagingSource<Int, LiveData<List<QuoteResponseItem>>>() {
-    companion object {
-        fun snapshot(items: List<QuoteResponseItem>): PagingData<QuoteResponseItem> {
-            return PagingData.from(items)
-        }
-    }
-
-    override fun getRefreshKey(state: PagingState<Int, LiveData<List<QuoteResponseItem>>>): Int {
-        return 0
-    }
-
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, LiveData<List<QuoteResponseItem>>> {
-        return LoadResult.Page(emptyList(), 0, 1)
-    }
-}
-
-val noopListUpdateCallback = object : ListUpdateCallback {
-    override fun onInserted(position: Int, count: Int) {}
-    override fun onRemoved(position: Int, count: Int) {}
-    override fun onMoved(fromPosition: Int, toPosition: Int) {}
-    override fun onChanged(position: Int, count: Int, payload: Any?) {}
 }
