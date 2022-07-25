@@ -1,6 +1,7 @@
 package com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.*
@@ -21,7 +22,7 @@ interface StudentDao {
     fun insertCourseStudentCrossRef(courseStudentCrossRef: List<CourseStudentCrossRef>)
 
     @RawQuery(observedEntities = [StudentEntity::class])
-    fun getAllStudent(query: SupportSQLiteQuery): LiveData<List<StudentEntity>>
+    fun getAllStudent(query: SupportSQLiteQuery): DataSource.Factory<Int, StudentEntity>
 
     @Transaction
     @Query("SELECT * FROM tbl_student")

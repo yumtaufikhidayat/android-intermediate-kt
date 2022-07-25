@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
+import androidx.paging.PagedList
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.StudentRepository
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentAndUniversity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
@@ -23,7 +24,7 @@ class MainViewModel(private val repository: StudentRepository) : ViewModel(){
         _sort.value = sortType
     }
 
-    fun getAllStudent(): LiveData<List<StudentEntity>> = _sort.switchMap {
+    fun getAllStudent(): LiveData<PagedList<StudentEntity>> = _sort.switchMap {
         repository.getAllStudent(it)
     }
     fun getAllStudentAndUniversity(): LiveData<List<StudentAndUniversity>> = repository.getAllStudentAndUniversity()
