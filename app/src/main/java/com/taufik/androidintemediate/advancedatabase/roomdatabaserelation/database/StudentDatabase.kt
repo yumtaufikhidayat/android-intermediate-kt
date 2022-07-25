@@ -3,12 +3,15 @@ package com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.datab
 import android.content.Context
 import androidx.room.*
 import androidx.room.migration.AutoMigrationSpec
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.CourseStudentCrossRef
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.StudentEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.database.entity.UniversityEntity
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.Common
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.InitialDataSource
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Database(
     entities = [StudentEntity::class, UniversityEntity::class, CourseEntity::class, CourseStudentCrossRef::class],
@@ -39,21 +42,20 @@ abstract class StudentDatabase : RoomDatabase() {
                         Common.DB_NAME
                     )
                         .fallbackToDestructiveMigration()
-                        .createFromAsset("StudentDatabase.db")
-//                        .addCallback(object : Callback() {
-//                            override fun onCreate(db: SupportSQLiteDatabase) {
-//                                super.onCreate(db)
-//                                INSTANCE?.let { database ->
-//                                    applicationScope.launch {
-//                                        val studentDao = database.studentDao()
-//                                        studentDao.insertStudent(InitialDataSource.getStudents())
-//                                        studentDao.insertUniversity(InitialDataSource.getUniversities())
-//                                        studentDao.insertCourse(InitialDataSource.getCourses())
-//                                        studentDao.insertCourseStudentCrossRef(InitialDataSource.getCourseStudentRelation())
-//                                    }
-//                                }
-//                            }
-//                        })
+                        .addCallback(object : Callback() {
+                            override fun onCreate(db: SupportSQLiteDatabase) {
+                                super.onCreate(db)
+                                INSTANCE?.let { database ->
+                                    applicationScope.launch {
+                                        val studentDao = database.studentDao()
+                                        studentDao.insertStudent(InitialDataSource.getStudents())
+                                        studentDao.insertUniversity(InitialDataSource.getUniversities())
+                                        studentDao.insertCourse(InitialDataSource.getCourses())
+                                        studentDao.insertCourseStudentCrossRef(InitialDataSource.getCourseStudentRelation())
+                                    }
+                                }
+                            }
+                        })
                         .build()
                 }
             }
