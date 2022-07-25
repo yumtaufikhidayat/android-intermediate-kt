@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.PopupMenu
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.taufik.androidintemediate.R
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.MyApplication
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ViewModelFactory
+import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.helper.SortType
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentAndUniversityAdapter
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentListAdapter
 import com.taufik.androidintemediate.advancedatabase.roomdatabaserelation.ui.adapter.StudentWithCourseAdapter
@@ -92,6 +95,30 @@ class RoomRelationDbActivity : AppCompatActivity() {
         }
     }
 
+    private fun showSortingOptionMenu(isShow: Boolean) {
+        val view = findViewById<View>(R.id.action_sort) ?: return
+        view.visibility = if (isShow) View.VISIBLE else View.GONE
+    }
+
+    private fun showSortingPopupMenu() {
+        val view = findViewById<View>(R.id.action_sort) ?: return
+        PopupMenu(this, view).run {
+            menuInflater.inflate(R.menu.sorting_menu, menu)
+
+            setOnMenuItemClickListener {
+                mainViewModel.changeSortType(
+                    when (it.itemId) {
+                        R.id.action_ascending -> SortType.ASCENDING
+                        R.id.action_descending -> SortType.DESCENDING
+                        else -> SortType.RANDOM
+                    }
+                )
+                true
+            }
+            show()
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_option, menu)
         return true
@@ -101,21 +128,30 @@ class RoomRelationDbActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_single_table -> {
                 getStudent()
+                showSortingOptionMenu(true)
                 true
             }
 
             R.id.action_many_to_one -> {
                 getStudentAndUniversity()
+                showSortingOptionMenu(false)
                 true
             }
 
             R.id.action_one_to_many -> {
                 getUniversityAndStudent()
+                showSortingOptionMenu(false)
                 true
             }
 
             R.id.action_many_to_many -> {
                 getStudentWithCourse()
+                showSortingOptionMenu(false)
+                true
+            }
+
+            R.id.action_sort -> {
+                showSortingPopupMenu()
                 true
             }
 

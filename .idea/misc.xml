@@ -71,6 +71,7 @@
         <entry key="app/src/main/res/menu/map_options.xml" value="0.45666666666666667" />
         <entry key="app/src/main/res/menu/menu_detail.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_option.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/menu/sorting_menu.xml" value="0.125" />
         <entry key="app/src/main/res/xml/file_paths.xml" value="0.2001953125" />
       </map>
     </option>
