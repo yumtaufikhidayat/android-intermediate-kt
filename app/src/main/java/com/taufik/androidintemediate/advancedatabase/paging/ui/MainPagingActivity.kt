@@ -19,10 +19,10 @@ class MainPagingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        setData()
+        setQuoteData()
     }
 
-    private fun setData() {
+    private fun setQuoteData() {
         val quoteAdapter = QuoteListAdapter()
         val mainViewModel: MainViewModel by viewModels {
             ViewModelFactory(this)
