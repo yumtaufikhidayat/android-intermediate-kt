@@ -40,6 +40,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".firebase.FirebaseMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".advancedatabase.paging.ui.MainPagingActivity"
+            android:exported="false" />
+        <activity
             android:name=".advancedatabase.roomdatabaserelation.ui.RoomRelationDbActivity"
             android:exported="false" />
         <activity
@@ -180,7 +186,7 @@
             android:name="com.taufik.androidintemediate.advancedui.canvas.CanvasClippingActivity"
             android:exported="false" />
         <activity
-            android:name=".advancedatabase.paging.ui.MainPagingActivity"
+            android:name=".firebase.FirebaseLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

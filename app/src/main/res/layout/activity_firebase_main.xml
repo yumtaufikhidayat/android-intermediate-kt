@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".firebase.FirebaseMainActivity">
+
+    <View
+        android:id="@+id/viewBackgroundChat"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/value_70dp"
+        android:background="@color/firebase_gray"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="@dimen/value_0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/value_10dp"
+        android:layout_marginVertical="@dimen/value_24dp"
+        android:layout_weight="1"
+        android:background="@drawable/edit_text_shadow"
+        android:hint="@string/say_something"
+        android:inputType="text"
+        android:elevation="@dimen/value_2dp"
+        android:minHeight="@dimen/value_50dp"
+        android:padding="@dimen/value_10dp"
+        android:autofillHints="Say something..."
+        app:layout_constraintTop_toTopOf="@+id/viewBackgroundChat"
+        app:layout_constraintBottom_toBottomOf="@id/viewBackgroundChat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSend"/>
+
+    <ImageView
+        android:id="@+id/btnSend"
+        android:layout_width="@dimen/value_40dp"
+        android:layout_height="@dimen/value_40dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/value_10dp"
+        android:enabled="false"
+        android:src="@drawable/ic_outline_send"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toTopOf="@id/etMessage"
+        app:layout_constraintBottom_toBottomOf="@id/etMessage"
+        app:layout_constraintStart_toEndOf="@id/etMessage"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/value_0dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/viewBackgroundChat"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

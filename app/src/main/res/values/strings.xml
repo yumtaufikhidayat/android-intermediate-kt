@@ -149,4 +149,6 @@
     <string name="descending" translatable="false">Z-A</string>
     <string name="random_sort" translatable="false">Random</string>
     <string name="retry" translatable="false">Coba lagi</string>
+
+    <string name="say_something">Say something…</string>
 </resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "410858509219",
+    "project_id": "android-intemediate-chat",
+    "storage_bucket": "android-intemediate-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410858509219:android:10eaf785f13f0a36d08016",
+        "android_client_info": {
+          "package_name": "com.taufik.androidintemediate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410858509219-p8b848dg8jjclb8jbv66mvkh31ufv1m9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgmFCwlqSoggUNpbVphBGQVqfQIbTSZgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410858509219-p8b848dg8jjclb8jbv66mvkh31ufv1m9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

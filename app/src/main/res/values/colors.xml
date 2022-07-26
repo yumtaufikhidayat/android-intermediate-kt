@@ -32,4 +32,11 @@
     <color name="bright_pink">#E91E63</color>
 
     <color name="placeholder">#6FB6B6B6</color>
+
+    <color name="firebase_yellow">#FFCA28</color>
+    <color name="firebase_amber">#FFA000</color>
+    <color name="firebase_orange">#F57C00</color>
+    <color name="firebase_blue">#039BE5</color>
+    <color name="firebase_navy">#2C384A</color>
+    <color name="firebase_gray">#ECEFF1</color>
 </resources>
