@@ -70,6 +70,7 @@
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.1864406779661017" />
         <entry key="app/src/main/res/layout/image_banner_widget.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/layout/item_loading.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_message.xml" value="0.505859375" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.19666666666666666" />
         <entry key="app/src/main/res/layout/item_quote.xml" value="0.21333333333333335" />
         <entry key="app/src/main/res/layout/item_row_hero.xml" value="0.1" />

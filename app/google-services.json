@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "410858509219",
+    "firebase_url": "https://android-intemediate-chat-default-rtdb.firebaseio.com",
     "project_id": "android-intemediate-chat",
     "storage_bucket": "android-intemediate-chat.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "410858509219-bvrb6kvop87ef5s52juhl15919h41ufj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taufik.androidintemediate",
+            "certificate_hash": "3392c34c1eced044dec7a34f39e2903ef4148ddd"
+          }
+        },
         {
           "client_id": "410858509219-p8b848dg8jjclb8jbv66mvkh31ufv1m9.apps.googleusercontent.com",
           "client_type": 3

@@ -23,6 +23,8 @@
         android:layout_weight="1"
         android:background="@drawable/edit_text_shadow"
         android:hint="@string/say_something"
+        android:textColorHint="@color/grey_200"
+        android:textColor="@color/black"
         android:inputType="text"
         android:elevation="@dimen/value_2dp"
         android:minHeight="@dimen/value_50dp"

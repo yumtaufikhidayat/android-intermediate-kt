@@ -150,5 +150,7 @@
     <string name="random_sort" translatable="false">Random</string>
     <string name="retry" translatable="false">Coba lagi</string>
 
-    <string name="say_something">Say something…</string>
+    <string name="say_something" translatable="false">Say something…</string>
+    <string name="send_success" translatable="false">Berhasil terkirim</string>
+    <string name="send_error" translatable="false">Gagal terkirim</string>
 </resources>
